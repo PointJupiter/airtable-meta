@@ -1,0 +1,30 @@
+image: node:10
+
+cache:
+  paths:
+    - node_modules
+
+stages:
+  - test
+  - build
+
+before_script:
+  - yarn
+
+test:
+  stage: test
+  script: yarn test
+  tags:
+    - docker
+
+lint:
+  stage: test
+  script: yarn lint
+  tags:
+    - docker
+
+build:
+  stage: build
+  script: yarn build
+  tags:
+    - docker
