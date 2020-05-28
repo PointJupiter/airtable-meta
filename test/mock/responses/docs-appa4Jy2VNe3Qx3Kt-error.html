@@ -1,0 +1,2177 @@
+<!DOCTYPE html>
+
+<html ng-csp="no-unsafe-eval">
+    <head>
+        <meta charSet="utf-8"/><meta name="theme-color" content="#ffffff"/>
+        <title>Airtable API - IOM Content Engine</title>
+
+        <link nonce="wcnxUDxnyNMr" rel="stylesheet" type="text/css" href="/css/compiled/api/docs.css?v=0be28cf8f0485988-7" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/baymax/apple-touch-icon.png" />
+<link rel="manifest" href="/images/favicon/baymax/manifest.json" />
+<link rel="mask-icon" href="/images/favicon/baymax/safari-pinned-tab.svg" color="#e82453" />
+
+<link id="favIconCanvas" rel="icon" type="image/x-icon">
+
+
+        <script nonce="wcnxUDxnyNMr">
+            var _rollbarConfig = (function() {
+
+        var regularExpressionsToFilterRollbarStackTraces = [/adroll\.com/,/intercomcdn\.com/,/intercom\.io/,/cdn\.segment\.com/];
+        var rollbarCheckIgnoreFunctionToFilterUnwantedClientSideExceptions = function rollbarCheckIgnoreFunctionToFilterUnwantedClientSideExceptions(
+isUncaught,
+args,
+payload)
+{
+  var frames =
+  payload &&
+  payload.data &&
+  payload.data.body &&
+  payload.data.body.trace &&
+  payload.data.body.trace.frames;
+  if (frames) {
+    var badFrames = false;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    frames.forEach(function (frame) {
+      if (badFrames) {
+        return;
+      }
+      if (frame && frame.filename) {
+        regularExpressionsToFilterRollbarStackTraces.forEach(function (regExp) {
+          if (badFrames) {
+            return;
+          }
+          if (regExp.test(frame.filename)) {
+            badFrames = true;
+          }
+        });
+      }
+    });
+    if (badFrames) {
+      return true;
+    }
+    if (frames.length === 1 && frames[0].filename === '(unknown)') {
+      var exception = payload.data.body.trace.exception;
+      var messagesToIgnore = [
+      'Script error.',
+      "undefined is not an object (evaluating 'window.__pad.performLoop')"];
+
+      if (exception && messagesToIgnore.indexOf(exception.message) > 0) {
+        return true;
+      }
+    }
+  }
+  return false;
+};
+        var sanitizeUrl = function sanitizeUrl(url) {
+  if (url.match(/shr(\w{14})/)) {
+    var replacedUrl = url.replace(/shr\w{14}/g, function (match) {
+      return match.slice(0, 7) + '**********';
+    });
+    url = replacedUrl;
+  }
+  if (url.match(/auth\/passwordReset/)) {
+    url = url.replace(/(auth\/passwordReset\/)(.*)$/, '$1*');
+  }
+  url = url.replace(/(\?.*)$/, function (queryString) {
+    return sanitizeQueryStringByReplacingQueryValuesWithStar(queryString);
+  });
+  return url;
+};
+        var sanitizeQueryStringByReplacingQueryValuesWithStar = function sanitizeQueryStringByReplacingQueryValuesWithStar(queryString) {
+  var sanitizedQueryString = queryString.
+  replace(/(=)([^&]+)(&)/g, '$1*$3').
+  replace(/(=)([^&]+)$/, '$1*');
+  return sanitizedQueryString;
+};
+        var rollbarTransformFunctionToRemoveSensitiveDataFromReportedClientSideExceptions = function _rollbarTransformFunctionToRemoveSensitiveDataFromReportedClientSideExceptions(
+payload)
+{
+  if (payload.data && payload.data.request) {
+    if (payload.data.request.url) {
+      payload.data.request.url = sanitizeUrl(payload.data.request.url);
+    }
+    if (payload.data.request.query_string) {
+      payload.data.request.query_string = sanitizeQueryStringByReplacingQueryValuesWithStar(
+      payload.data.request.query_string);
+
+    }
+  }
+};
+
+
+                var rollbarConfig = {"rollbarJsUrl":"https:\u002F\u002Fcdnjs.cloudflare.com\u002Fajax\u002Flibs\u002Frollbar.js\u002F1.9.0\u002Frollbar.nojson.min.js","accessToken":"5a2d5967127341068ca03d066e325b6a","captureUncaught":true,"captureUnhandledRejections":false,"uncaughtErrorLevel":"error","maxItems":1000,"itemsPerMinute":60,"payload":{"environment":"production","person":{"id":"usrRs7emBiSTaBf1q"},"client":{"javascript":{"source_map_enabled":true,"code_version":"0be28cf8f0485988dc4f3e30992e747fbb145d9e","guess_uncaught_frames":true}}}};
+                rollbarConfig.checkIgnore = rollbarCheckIgnoreFunctionToFilterUnwantedClientSideExceptions;
+                rollbarConfig.transform = rollbarTransformFunctionToRemoveSensitiveDataFromReportedClientSideExceptions;
+                return rollbarConfig;
+            })();
+
+            !function(r){function e(t){if(o[t])return o[t].exports;var n=o[t]={exports:{},id:t,loaded:!1};return r[t].call(n.exports,n,n.exports,e),n.loaded=!0,n.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var t=o(1).Rollbar,n=o(2);_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://d37gvrvc0wt4s1.cloudfront.net/js/v1.9/rollbar.min.js";var a=t.init(window,_rollbarConfig),i=n(a,_rollbarConfig);a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,i)},function(r,e){"use strict";function o(r){return function(){try{return r.apply(this,arguments)}catch(e){try{console.error("[Rollbar]: Internal error",e)}catch(o){}}}}function t(r,e,o){window._rollbarWrappedError&&(o[4]||(o[4]=window._rollbarWrappedError),o[5]||(o[5]=window._rollbarWrappedError._rollbarContext),window._rollbarWrappedError=null),r.uncaughtError.apply(r,o),e&&e.apply(window,o)}function n(r){var e=function(){var e=Array.prototype.slice.call(arguments,0);t(r,r._rollbarOldOnError,e)};return e.belongsToShim=!0,e}function a(r){this.shimId=++c,this.notifier=null,this.parentShim=r,this._rollbarOldOnError=null}function i(r){var e=a;return o(function(){if(this.notifier)return this.notifier[r].apply(this.notifier,arguments);var o=this,t="scope"===r;t&&(o=new e(this));var n=Array.prototype.slice.call(arguments,0),a={shim:o,method:r,args:n,ts:new Date};return window._rollbarShimQueue.push(a),t?o:void 0})}function l(r,e){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){var o=e.addEventListener;e.addEventListener=function(e,t,n){o.call(this,e,r.wrap(t),n)};var t=e.removeEventListener;e.removeEventListener=function(r,e,o){t.call(this,r,e&&e._wrapped?e._wrapped:e,o)}}}var c=0;a.init=function(r,e){var t=e.globalAlias||"Rollbar";if("object"==typeof r[t])return r[t];r._rollbarShimQueue=[],r._rollbarWrappedError=null,e=e||{};var i=new a;return o(function(){if(i.configure(e),e.captureUncaught){i._rollbarOldOnError=r.onerror,r.onerror=n(i);var o,a,c="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(o=0;o<c.length;++o)a=c[o],r[a]&&r[a].prototype&&l(i,r[a].prototype)}return e.captureUnhandledRejections&&(i._unhandledRejectionHandler=function(r){var e=r.reason,o=r.promise,t=r.detail;!e&&t&&(e=t.reason,o=t.promise),i.unhandledRejection(e,o)},r.addEventListener("unhandledrejection",i._unhandledRejectionHandler)),r[t]=i,i})()},a.prototype.loadFull=function(r,e,t,n,a){var i=function(){var e;if(void 0===r._rollbarPayloadQueue){var o,t,n,i;for(e=new Error("rollbar.js did not load");o=r._rollbarShimQueue.shift();)for(n=o.args,i=0;i<n.length;++i)if(t=n[i],"function"==typeof t){t(e);break}}"function"==typeof a&&a(e)},l=!1,
+                c=e.createElement("script"),d=e.getElementsByTagName("script")[0],p=d.parentNode;
+                c.nonce='wcnxUDxnyNMr',c.crossOrigin="",c.src=n.rollbarJsUrl,c.async=!t,
+                c.onload=c.onreadystatechange=o(function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){c.onload=c.onreadystatechange=null;try{p.removeChild(c)}catch(r){}l=!0,i()}}),p.insertBefore(c,d)},a.prototype.wrap=function(r,e){try{var o;if(o="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._wrapped){r._wrapped=function(){try{return r.apply(this,arguments)}catch(e){throw e._rollbarContext=o()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e,e}},r._wrapped._isWrap=!0;for(var t in r)r.hasOwnProperty(t)&&(r._wrapped[t]=r[t])}return r._wrapped}catch(n){return r}};for(var d="log,debug,info,warn,warning,error,critical,global,configure,scope,uncaughtError,unhandledRejection".split(","),p=0;p<d.length;++p)a.prototype[d[p]]=i(d[p]);r.exports={Rollbar:a,_rollbarWindowOnError:t}},function(r,e){"use strict";r.exports=function(r,e){return function(o){if(!o&&!window._rollbarInitialized){var t=window.RollbarNotifier,n=e||{},a=n.globalAlias||"Rollbar",i=window.Rollbar.init(n,r);i._processShimQueue(window._rollbarShimQueue||[]),window[a]=i,window._rollbarInitialized=!0,t.processPayloads()}}}}]);
+        </script>
+
+
+        <script nonce="wcnxUDxnyNMr">
+            window.appPickerApplicationIdToName = {"app35UxEVbcwUWUwd":"Sales CRM","app8pD6kLBJ6fm4yz":"Dev template 1","appHG36dkwlQtbDPH":"UNDRR Content Engine","appMOLiWa2Ah9xVuV":"TCE template v5 DEV","appRdLZ915gjhK1Bx":"Content calendar","appXbTQrCMZ5IZU9m":"Product planning","appa4Jy2VNe3Qx3Kt":"IOM Content Engine","appcHFVP5xIcBhCk1":"User research","appeJkyZHPiut4ZJi":"Product launch","applYQunwITFuaAtF":"Project tracker"};
+            window.appPickerWorkspaceIdToName = {"wspNsZseMjpH8ajx6":"My First Workspace","wspSHARED00000000":"Bases shared with me"};
+        </script>
+
+        <script src="//static.airtable.com/js/lib/regenerator-runtime.min.js" nonce="wcnxUDxnyNMr" crossorigin=anonymous></script>
+<script src="//static.airtable.com/js/lib/jquery/2.1.4/jquery.min.js" nonce="wcnxUDxnyNMr" crossorigin=anonymous></script>
+<script src="//static.airtable.com/js/lib/jquery/jquery-ui-1.11.4.custom.mod6.min.js" nonce="wcnxUDxnyNMr" crossorigin=anonymous></script>
+<script src="//static.airtable.com/js/lib/angularjs/1.3.8/angular.min.js" nonce="wcnxUDxnyNMr" crossorigin=anonymous></script>
+<script src="//static.airtable.com/js/lib/angularjs/highlight.pack.js" nonce="wcnxUDxnyNMr" crossorigin=anonymous></script>
+<script src="//static.airtable.com/js/lib/angularjs/angular-highlightjs.js" nonce="wcnxUDxnyNMr" crossorigin=anonymous></script>
+<script src="https://static.airtable.com/js/by_sha/0be28cf8/application_api_docs.js" nonce="wcnxUDxnyNMr" crossorigin=anonymous></script>
+        <script nonce="wcnxUDxnyNMr">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-55182693-1', 'auto');
+ga('send', 'pageview');</script>
+
+<script nonce="wcnxUDxnyNMr">
+!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.1";
+    analytics.load("nwg4rpj479");
+}}();</script>
+
+<img height="1" width="1" style="display:none" alt="" src="https://dc.ads.linkedin.com/collect/?pid=23413&amp;fmt=gif"/>
+
+<img height="1" width="1" style="display:none" alt=" " src="https://analytics.twitter.com/i/adsct?txn_id=l6gpl&amp;p_id=Twitter&amp;tw_sale_amount=0&amp;tw_order_quantity=0"/>
+
+
+    </head>
+
+    <body>
+        <div ng-app="applicationDocumentationApp">
+            <div ng-controller="applicationApiDocumentation" data-api-key="keyLfBIkoTj4CQvS3" data-endpoint-url="https://api.airtable.com" data-latest-api-version="0.1.0">
+
+                <div class="topbar">
+                    <div class="titleButton">
+
+<div class="appIcon brightColoredBackground" data-color="gray">
+    <div class="symbol">
+
+            <i class="icon icon-bolt"></i>
+
+    </div>
+</div>
+
+                        <div class="name">Airtable API for "{{ application.name }}"</div>
+                        <i class="appPickerIcon icon-angle-down"></i>
+                    </div>
+                    <a target="_blank" rel="noopener noreferrer" class="openApp" href="/appa4Jy2VNe3Qx3Kt">Open base</a>
+                </div>
+
+                <ul class="appPicker menu linkMenu">
+
+
+
+            <div class="workspace ui-state-disabled">
+                {{ 'wspSHARED00000000' | appPickerWorkspaceIdToName }}
+            </div>
+
+
+<li class="app menuItemWithLink" menuitemvalue="app8pD6kLBJ6fm4yz">
+    <a href="/app8pD6kLBJ6fm4yz/api/docs">
+
+
+<div class="appIcon brightColoredBackground" data-color="green">
+    <div class="symbol">
+
+            <i class="icon icon-cogs"></i>
+
+    </div>
+</div>
+
+        <span class="name">{{ 'app8pD6kLBJ6fm4yz' | appPickerApplicationIdToName }}</span>
+    </a>
+</li>
+
+
+
+<li class="app menuItemWithLink" menuitemvalue="appa4Jy2VNe3Qx3Kt">
+    <a href="/appa4Jy2VNe3Qx3Kt/api/docs">
+
+
+<div class="appIcon brightColoredBackground" data-color="gray">
+    <div class="symbol">
+
+            <i class="icon icon-bolt"></i>
+
+    </div>
+</div>
+
+        <span class="name">{{ 'appa4Jy2VNe3Qx3Kt' | appPickerApplicationIdToName }}</span>
+    </a>
+</li>
+
+
+
+<li class="app menuItemWithLink" menuitemvalue="appMOLiWa2Ah9xVuV">
+    <a href="/appMOLiWa2Ah9xVuV/api/docs">
+
+
+<div class="appIcon brightColoredBackground" data-color="gray">
+    <div class="symbol">
+
+            <i class="icon icon-bolt"></i>
+
+    </div>
+</div>
+
+        <span class="name">{{ 'appMOLiWa2Ah9xVuV' | appPickerApplicationIdToName }}</span>
+    </a>
+</li>
+
+
+
+<li class="app menuItemWithLink" menuitemvalue="appHG36dkwlQtbDPH">
+    <a href="/appHG36dkwlQtbDPH/api/docs">
+
+
+<div class="appIcon brightColoredBackground" data-color="orange">
+    <div class="symbol">
+
+            <i class="icon icon-medkit"></i>
+
+    </div>
+</div>
+
+        <span class="name">{{ 'appHG36dkwlQtbDPH' | appPickerApplicationIdToName }}</span>
+    </a>
+</li>
+
+
+
+
+
+
+            <div class="workspace ui-state-disabled">
+                {{ 'wspNsZseMjpH8ajx6' | appPickerWorkspaceIdToName }}
+            </div>
+
+
+<li class="app menuItemWithLink" menuitemvalue="appXbTQrCMZ5IZU9m">
+    <a href="/appXbTQrCMZ5IZU9m/api/docs">
+
+
+<div class="appIcon brightColoredBackground" data-color="cyan">
+    <div class="symbol">
+
+            <i class="icon icon-beaker"></i>
+
+    </div>
+</div>
+
+        <span class="name">{{ 'appXbTQrCMZ5IZU9m' | appPickerApplicationIdToName }}</span>
+    </a>
+</li>
+
+
+
+<li class="app menuItemWithLink" menuitemvalue="appeJkyZHPiut4ZJi">
+    <a href="/appeJkyZHPiut4ZJi/api/docs">
+
+
+<div class="appIcon brightColoredBackground" data-color="orange">
+    <div class="symbol">
+
+            <i class="icon icon-rocket"></i>
+
+    </div>
+</div>
+
+        <span class="name">{{ 'appeJkyZHPiut4ZJi' | appPickerApplicationIdToName }}</span>
+    </a>
+</li>
+
+
+
+<li class="app menuItemWithLink" menuitemvalue="appcHFVP5xIcBhCk1">
+    <a href="/appcHFVP5xIcBhCk1/api/docs">
+
+
+<div class="appIcon brightColoredBackground" data-color="purple">
+    <div class="symbol">
+
+            <i class="icon icon-coffee"></i>
+
+    </div>
+</div>
+
+        <span class="name">{{ 'appcHFVP5xIcBhCk1' | appPickerApplicationIdToName }}</span>
+    </a>
+</li>
+
+
+
+<li class="app menuItemWithLink" menuitemvalue="app35UxEVbcwUWUwd">
+    <a href="/app35UxEVbcwUWUwd/api/docs">
+
+
+<div class="appIcon brightColoredBackground" data-color="orange">
+    <div class="symbol">
+
+            <i class="icon icon-money"></i>
+
+    </div>
+</div>
+
+        <span class="name">{{ 'app35UxEVbcwUWUwd' | appPickerApplicationIdToName }}</span>
+    </a>
+</li>
+
+
+
+<li class="app menuItemWithLink" menuitemvalue="appRdLZ915gjhK1Bx">
+    <a href="/appRdLZ915gjhK1Bx/api/docs">
+
+
+<div class="appIcon brightColoredBackground" data-color="teal">
+    <div class="symbol">
+
+            <i class="icon icon-calendar"></i>
+
+    </div>
+</div>
+
+        <span class="name">{{ 'appRdLZ915gjhK1Bx' | appPickerApplicationIdToName }}</span>
+    </a>
+</li>
+
+
+
+<li class="app menuItemWithLink" menuitemvalue="applYQunwITFuaAtF">
+    <a href="/applYQunwITFuaAtF/api/docs">
+
+
+<div class="appIcon brightColoredBackground" data-color="blue">
+    <div class="symbol">
+
+            <i class="icon icon-briefcase"></i>
+
+    </div>
+</div>
+
+        <span class="name">{{ 'applYQunwITFuaAtF' | appPickerApplicationIdToName }}</span>
+    </a>
+</li>
+
+
+
+
+</ul>
+
+
+                <div class="body">
+                    <div class="index">
+                        <div class="sectionWrapper">
+                            <a class="indexSectionLink" href="#{{currentLanguage}}/introduction" section-name="introduction" data-color="{{application.color}}">Introduction</a>
+                        </div>
+
+
+
+                        <div class="sectionWrapper">
+                            <a class="indexSectionLink" href="#{{currentLanguage}}/ratelimits" section-name="ratelimits" data-color="{{application.color}}">Rate Limits</a>
+                        </div>
+
+                        <div class="sectionWrapper">
+                            <a class="indexSectionLink" href="#{{currentLanguage}}/authentication" section-name="authentication" data-color="{{application.color}}">Authentication</a>
+                        </div>
+
+                        <div class="sectionWrapper" ng-repeat="table in application.tables">
+                            <a class="indexSectionLink" href="#{{currentLanguage}}/table:{{table.nameForUrl}}" section-name="table:{{table.nameForUrl}}" data-color="{{application.color}}">{{table.name}} table</a>
+
+                            <a class="indexSubsectionLink" href="#{{currentLanguage}}/table:{{table.nameForUrl}}:fields" section-name="table:{{table.nameForUrl}}:fields" data-color="{{application.color}}">Fields</a>
+                            <a class="indexSubsectionLink" href="#{{currentLanguage}}/table:{{table.nameForUrl}}:list" section-name="table:{{table.nameForUrl}}:list" data-color="{{application.color}}">List records</a>
+                            <a class="indexSubsectionLink" href="#{{currentLanguage}}/table:{{table.nameForUrl}}:retrieve" section-name="table:{{table.nameForUrl}}:retrieve" data-color="{{application.color}}">Retrieve a record</a>
+                            <a class="indexSubsectionLink" href="#{{currentLanguage}}/table:{{table.nameForUrl}}:create" section-name="table:{{table.nameForUrl}}:create" data-color="{{application.color}}">Create records</a>
+                            <a class="indexSubsectionLink" href="#{{currentLanguage}}/table:{{table.nameForUrl}}:update" section-name="table:{{table.nameForUrl}}:update" data-color="{{application.color}}">Update records</a>
+                            <a class="indexSubsectionLink" href="#{{currentLanguage}}/table:{{table.nameForUrl}}:delete" section-name="table:{{table.nameForUrl}}:delete" data-color="{{application.color}}">Delete records</a>
+                        </div>
+
+                        <div class="sectionWrapper">
+                            <a class="indexSectionLink" href="#{{currentLanguage}}/errors" section-name="errors" data-color="{{application.color}}">Errors</a>
+
+                            <a class="indexSubsectionLink" href="#{{currentLanguage}}/errors:successcode" section-name="errors:successcode" data-color="{{application.color}}">Success code</a>
+                            <a class="indexSubsectionLink" href="#{{currentLanguage}}/errors:usererrorcodes" section-name="errors:usererrorcodes" data-color="{{application.color}}">User error codes</a>
+                            <a class="indexSubsectionLink" href="#{{currentLanguage}}/errors:servererrorcodes" section-name="errors:servererrorcodes" data-color="{{application.color}}">Server error codes</a>
+                        </div>
+
+                    </div>
+
+                    <div class="docs">
+                        <div class="languageTabs">
+                            <div class="tab">
+                                <input type="radio" id="curl" value="curl" name="languageGroup" ng-model="currentLanguage" />
+                                <label for="curl">curl</label>
+                            </div>
+                            <div class="tab">
+                                <input type="radio" id="javascript" value="javascript" name="languageGroup" ng-model="currentLanguage" />
+                                <label for="javascript">JavaScript</label>
+                            </div>
+                            <div class="apiKeyToggle" ng-if="airtableApiKey">
+                                <label title="Checking this box will reveal your real live API key in the code below -- be sure to keep it secret!">
+                                    <input type="checkbox" ng-model="showApiKey" ng-change="toggleApiKey()" />show API key
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            <h1 section-name="introduction">Introduction</h1>
+                            <div class="docSection">
+    <div class="text">
+        <p>
+            The <appname></appname> API provides an easy way to integrate your <appname></appname> data in Airtable with any external system. The API closely follows REST semantics, uses JSON to encode objects, and relies on standard HTTP codes to signal operation outcomes.
+        </p>
+        <p>
+        	The API documentation below is specifically generated for your base. We recommend that you use the <a target="_blank" rel="noopener noreferrer" href="/{{application.id}}">graphical Airtable interface</a> to add a few records of example data for each table. These records will be displayed in the documentation examples generated below.
+        </p>
+        <p>
+            The ID of this base is <code>{{application.id}}</code>.
+        </p>
+        <p>
+            <b>Please note</b>: if you make changes to a field (column) name or type, the API interface for those fields will change correspondingly. Therefore, please make sure to update your API implementation accordingly whenever you make changes to your Airtable schema from the graphical interface.
+        </p>
+        <p>
+            Official API client:
+        </p>
+        <ul>
+            <li style="margin-left: 12px;">JavaScript: <a href="https://github.com/Airtable/airtable.js" target="_blank" rel="noopener noreferrer">airtable.js</a> (Node.js + browser)</li>
+        </ul>
+        <p>
+            Community-built API clients:
+        </p>
+        <ul>
+            <li style="margin-left: 12px;">Ruby: <a href="https://github.com/sirupsen/airrecord" target="_blank" rel="noopener noreferrer">airrecord</a></li>
+            <li style="margin-left: 12px;">.NET: <a href="https://github.com/ngocnicholas/airtable.net" target="_blank" rel="noopener noreferrer">airtable.net</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+                            <h1 section-name="ratelimits">Rate Limits</h1>
+                            <div class="docSection">
+    <div class="text">
+        <p>
+            The API is limited to 5 requests per second per base.
+            If you exceed this rate, you will receive a 429 status code and will need to wait 30 seconds before subsequent requests will succeed.
+        </p>
+        <p>
+            The <a href="https://github.com/Airtable/airtable.js" target="_blank" rel="noopener noreferrer">official JavaScript client</a>
+            has built-in retry logic.
+        </p>
+        <p>
+            If you anticipate a higher read volume, we recommend using a caching proxy.
+            This rate limit is the same for all plans and increased limits are not currently available.
+        </p>
+    </div>
+</div>
+
+
+                            <h1 section-name="authentication">Authentication</h1>
+                            <div class="docSection">
+    <div class="text">
+        <p>
+            Airtable uses simple token-based authentication. To generate or manage your API key, visit your <a href="/account" target="_blank" rel="noopener noreferrer">account</a> page.
+            <strong>Your API key carries the same privileges as your user account, so be sure to keep it secret!</strong>
+            <strong ng-if="currentLanguage === 'javascript'">
+                Using Airtable.js in the browser is strongly discouraged, since that will expose your API key to everyone who has access to that web page.
+            </strong>
+        </p>
+
+        <div ng-if="currentLanguage === 'curl'">
+            <p>
+                You can authenticate to the API by providing your API key in the HTTP authorization bearer token header. Alternatively, a slightly lower-security approach is to provide your API key with the <code>api_key</code> query parameter.
+            </p>
+        </div>
+
+        <div ng-if="currentLanguage === 'javascript'">
+            <p>
+                To configure Airtable.js either store your API key in the <code>AIRTABLE_API_KEY</code> environment variable or pass it directly to the client library. Note that environment variables are not available when using Airtable.js in the browser.
+            </p>
+        </div>
+
+        <p>
+            All API requests must be authenticated and made over HTTPS.
+        </p>
+    </div>
+
+    <div class="code">
+        <div ng-if="currentLanguage === 'curl'">
+            <h4>Example using Bearer Token (recommended)</h4>
+
+
+<span hljs compile="true">
+$ curl {{endpointUrl}}/v{{apiVersionMajor}}/{{application.id}}/{{application | getFirstTableNameURIEncoded}} \
+-H "Authorization: Bearer {{apiKey}}"
+</span>
+
+            <h4>Example using query parameter</h4>
+
+<span hljs compile="true">
+$ curl {{endpointUrl}}/v{{apiVersionMajor}}/{{application.id}}/{{application | getFirstTableNameURIEncoded}}?api_key={{apiKey}}
+</span>
+
+        </div>
+        <div ng-if="currentLanguage === 'javascript'">
+            <h4>Example using environment variable</h4>
+
+<span hljs compile="true">
+# Shell:
+$ export AIRTABLE_API_KEY={{apiKey}}
+
+# Node:
+const base = require('airtable').base('{{application.id}}');
+</span>
+
+            <h4>Example using custom configuration</h4>
+
+<span hljs compile="true">
+var Airtable = require('airtable');
+Airtable.configure({
+    endpointUrl: '{{endpointUrl}}',
+    apiKey: '{{apiKey}}'
+});
+var base = Airtable.base('{{application.id}}');
+</span>
+        </div>
+    </div>
+</div>
+
+
+                            <div ng-repeat="table in application.tables">
+                                <h1 section-name="table:{{table.nameForUrl}}">{{table.name}} Table</h1>
+
+                                <div class="docSection fields">
+    <h2 section-name="table:{{table.nameForUrl}}:fields">Fields</h2>
+    <div class="text">
+        <p>
+            Each record in the <tablename></tablename> table contains the following fields:
+        </p>
+        <div class="fieldsRow header">
+            <h3 class="name">Field Name</h3>
+            <h3 class="type">Type</h3>
+            <h3 class="description">Description</h3>
+        </div>
+    </div>
+</div>
+
+<div class="docSection fields" ng-repeat="column in table.columns" ng-controller="fieldController">
+
+    <div class="text">
+        <div class="fieldsRow">
+            <div class="name">
+                <columnname></columnname>
+            </div>
+            <ng-switch on="column.type">
+
+                <span ng-switch-when="text">
+                    <ng-switch on="column.typeOptions.validatorName">
+                        <span ng-switch-when="url">
+                            <div class="type">
+                                URL
+                            </div>
+                            <div class="description">
+                                <div class="valueType">string</div>
+                                A valid URL (e.g. airtable.com or https://airtable.com/universe).
+                            </div>
+                        </span>
+                        <span ng-switch-when="email">
+                            <div class="type">
+                                Email
+                            </div>
+                            <div class="description">
+                                <div class="valueType">string</div>
+                                A valid email address.
+                            </div>
+                        </span>
+                        <span ng-switch-default>
+                            <div class="type">
+                                Text
+                            </div>
+                            <div class="description">
+                                <div class="valueType">string</div>
+                                A single line of text.
+                            </div>
+                        </span>
+                    </ng-switch>
+                </span>
+
+                <span ng-switch-when="multilineText">
+                    <div class="type">
+                        Long text
+                    </div>
+                    <div class="description">
+                        <div class="valueType">string</div>
+                        Multiple lines of text, which may contain "mention tokens", e.g.
+                        <br />
+                        <code style="color: #888;">&lt;airtable:mention id="menE1i9oBaGX3DseR"&gt;@Alex&lt;/airtable:mention&gt;</code>
+                    </div>
+                </span>
+
+                <span ng-switch-when="number">
+                    <ng-switch on="column.typeOptions.format">
+                        <span ng-switch-when="integer">
+                            <div class="type">
+                                Number
+                            </div>
+                            <div class="description">
+                                <div class="valueType">number</div>
+                                An integer (whole number, e.g. 1, 32, 99). <numberdescription></numberdescription>
+                            </div>
+                        </span>
+                        <span ng-switch-when="decimal">
+                            <div class="type">
+                                Number
+                            </div>
+                            <div class="description">
+                                <div class="valueType">number</div>
+                                A decimal number showing {{column.typeOptions.precision}} decimal {{column.typeOptions.precision === 1 ? "digit" : "digits"}}. <numberdescription></numberdescription>
+                            </div>
+                        </span>
+                        <span ng-switch-when="currency">
+                            <div class="type">
+                                Currency
+                            </div>
+                            <div class="description">
+                                <div class="valueType">number</div>
+                                Currency value in USD. <numberdescription></numberdescription>
+                            </div>
+                        </span>
+                        <span ng-switch-when="percent">
+                            <div class="type">
+                                Percent
+                            </div>
+                            <div class="description">
+                                <div class="valueType">number</div>
+                                Percentage value showing {{column.typeOptions.precision}} decimal {{column.typeOptions.precision === 1 ? "digit" : "digits"}}. <numberdescription></numberdescription>
+                            </div>
+                        </span>
+                    </ng-switch>
+                </span>
+
+                <div ng-switch-when="multiSelect">
+                    <div class="type">
+                        Multiple select
+                    </div>
+                    <div class="description">
+                        <div class="valueType">array of strings</div>
+                        <p>Array of selected option names.</p>
+                        <selectcolumndescription></selectcolumndescription>
+                    </div>
+                </div>
+
+                <div ng-switch-when="select">
+                    <div class="type">
+                        Single select
+                    </div>
+                    <div class="description">
+                        <div class="valueType">string</div>
+                        <p>Selected option name.</p>
+                        <selectcolumndescription></selectcolumndescription>
+                    </div>
+                </div>
+
+                <div ng-switch-when="foreignKey">
+                    <div class="type">
+                        Link to another record
+                    </div>
+                    <div class="description">
+                        <div class="valueType">array of record IDs (strings)</div>
+                        Array of linked records IDs from the <span class="tableName">{{column.foreignTable.name}}</span> table.
+                        <ng-if ng-if="isReversedFromTypeOptions()">
+                            <br /><br />
+                            Because this field is configured to show records in reversed order, the order of records in the app will be reversed compared to what you see here.
+                        </ng-if>
+                    </div>
+                </div>
+
+                <div ng-switch-when="button">
+                    <div class="type">
+                        Button
+                    </div>
+                    <div class="description">
+                        <div class="valueType">button object</div>
+                        Object providing details about the button configuration.
+                        <br /><br />
+
+                        <div class="propName">label</div>
+                        <div class="propType">string</div>
+                        <div class="propDescription">button label</div>
+
+                        <div class="propName">url</div>
+                        <div class="propType">string</div>
+                        <div class="propDescription">
+                            <div>for "Open URL" actions, the computed url value</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-switch-when="date">
+                    <div class="type">
+                        Date{{column.typeOptions.isDateTime ? ' and time' : '' }}
+                    </div>
+
+                    <div class="description">
+                        <div class="valueType">string (ISO 8601 formatted date)</div>
+                        UTC {{column.typeOptions.isDateTime ? 'date and time' : 'date'}}, e.g. "2014-09-05{{column.typeOptions.isDateTime ? 'T07:00:00.000Z' : ''}}".
+                    </div>
+                </div>
+
+                <div ng-switch-when="phone">
+                    <div class="type">
+                        Phone number
+                    </div>
+                    <div class="description">
+                        <div class="valueType">string</div>
+                        A telephone number, e.g. "(415) 555-9876".
+                    </div>
+                </div>
+
+                <div ng-switch-when="multipleAttachment">
+                    <div class="type">
+                        Attachment
+                    </div>
+                    <div class="description">
+                        <div class="valueType">array of attachment objects</div>
+                        Each attachment object may contain the following properties. To see which fields are required or optional, please consult the relevant section: <a href="#{{currentLanguage}}/table:{{table.nameForUrl}}:retrieve">retrieve</a>, <a href="#{{currentLanguage}}/table:{{table.nameForUrl}}:create">create</a>, <a href="#{{currentLanguage}}/table:{{table.nameForUrl}}:update">update</a>, or <a href="#{{currentLanguage}}/table:{{table.nameForUrl}}:delete">delete</a>.
+
+                        <ng-if ng-if="isReversedFromTypeOptions()">
+                            <br /><br />
+                            Because this field is configured to show attachments in reversed order, the order of attachments in the app will be reversed compared to what you see here.
+                        </ng-if>
+                        <br /><br />
+
+                        <div class="propName">id</div>
+                        <div class="propType">string</div>
+                        <div class="propDescription">unique attachment id</div>
+
+                        <div class="propName">url</div>
+                        <div class="propType">string</div>
+                        <div class="propDescription">url, e.g. "https://dl.airtable.com/foo.jpg"</div>
+
+                        <div class="propName">filename</div>
+                        <div class="propType">string</div>
+                        <div class="propDescription">filename, e.g. "foo.jpg"</div>
+
+                        <div class="propName">size</div>
+                        <div class="propType">number</div>
+                        <div class="propDescription">file size, in bytes</div>
+
+                        <div class="propName">type</div>
+                        <div class="propType">string</div>
+                        <div class="propDescription">content type, e.g. "image/jpeg"</div>
+
+                        <div class="propName">width</div>
+                        <div class="propType">number</div>
+                        <div class="propName">height</div>
+                        <div class="propType">number</div>
+                        <div class="propDescription">width/height, in pixels (these may be available if the attachment is an image)</div>
+
+                        <div class="propName">thumbnails.small.url</div>
+                        <div class="propType">string</div>
+                        <div class="propName">thumbnails.large.url</div>
+                        <div class="propType">string</div>
+                        <div class="propDescription">url of small/large thumbnails (these may be available if the attachment is an image or document)</div>
+
+                        <div class="propName">thumbnails.small.width</div>
+                        <div class="propType">number</div>
+                        <div class="propName">thumbnails.small.height</div>
+                        <div class="propType">number</div>
+                        <div class="propName">thumbnails.large.width</div>
+                        <div class="propType">number</div>
+                        <div class="propName">thumbnails.large.height</div>
+                        <div class="propType">number</div>
+                        <div class="propDescription">width/height of small/large thumbnails, in pixels (these will be available if the corresponding thumbnail url is available)</div>
+                    </div>
+                </div>
+
+                <div ng-switch-when="checkbox">
+                    <div class="type">
+                        Checkbox
+                    </div>
+                    <div class="description">
+                        <div class="valueType">boolean</div>
+                        This field is "true" when checked and otherwise empty.
+                    </div>
+                </div>
+
+                <span ng-switch-when="formula">
+                    <ng-switch on="column.typeOptions.displayType">
+                        <span ng-switch-when="createdTime">
+                            <div class="type">
+                                Created time
+                            </div>
+                            <div class="description">
+                                <div class="valueType">string</div>
+                                The time the record was created in UTC, e.g. "2015-08-29{{column.typeOptions.isDateTime ? 'T07:00:00.000Z' : ''}}".
+                            </div>
+                        </span>
+                        <span ng-switch-default>
+                            <div class="type">
+                                Formula
+                            </div>
+                            <div class="description">
+                                <div class="valueType">number or string</div>
+                                Computed value: <span ng-bind-html="column | columnFormulaTextHtml: table"></span>.
+                            </div>
+                        </span>
+                    </ng-switch>
+                </span>
+
+                <div ng-switch-when="rollup">
+                    <div class="type">
+                        Rollup
+                    </div>
+                    <div class="description">
+                        <div class="valueType">number or string</div>
+                        Computed value: {{column.typeOptions.formulaTextParsed}} for <span class="columnName">{{column.foreignTableRollupColumnName}}</span> in <span class="tableName">{{column.foreignTableName}}</span>.
+                    </div>
+                </div>
+
+                <div ng-switch-when="count">
+                    <div class="type">
+                        Count
+                    </div>
+                    <div class="description">
+                        <div class="valueType">number</div>
+                        Number of linked <span class="tableName">{{column.foreignTableName}}</span> records.
+                    </div>
+                </div>
+
+                <div ng-switch-when="lookup">
+                    <div class="type">
+                        Lookup
+                    </div>
+                    <div class="description">
+                        <div class="valueType">array of numbers, strings, booleans, or objects</div>
+                        Array of <span class="columnName">{{column.foreignTableRollupColumnName}}</span> fields in linked <span class="tableName">{{column.foreignTableName}}</span> records.
+                    </div>
+                </div>
+
+                <div ng-switch-when="autoNumber">
+                    <div class="type">
+                        Auto Number
+                    </div>
+                    <div class="description">
+                        <div class="valueType">number</div>
+                        Automatically incremented unique counter for each record.
+                    </div>
+                </div>
+
+                <div ng-switch-when="barcode">
+                    <div class="type">
+                        Barcode
+                    </div>
+                    <div class="description">
+                        <div class="valueType">barcode object</div>
+                        The barcode object may contain the following two properties, both of which are optional.
+                        <br /><br />
+
+                        <div class="propName">text</div>
+                        <div class="propType">string</div>
+                        <div class="propDescription">barcode data</div>
+
+                        <div class="propName">type</div>
+                        <div class="propType">string</div>
+                        <div class="propDescription">barcode symbology, e.g. "upce" or "code39"</div>
+                    </div>
+                </div>
+
+                <div ng-switch-when="collaborator">
+                    <div class="type">
+                        Collaborator
+                    </div>
+                    <div class="description">
+                        <div class="valueType">collaborator object</div>
+                        Object providing details about the collaborator in this field.
+                        <br /><br />
+
+                        <div class="propName">id</div>
+                        <div class="propType">string</div>
+                        <div class="propDescription">unique user id</div>
+
+                        <div class="propName">email</div>
+                        <div class="propType">string</div>
+                        <div class="propDescription">user's email address</div>
+
+                        <div class="propName">name</div>
+                        <div class="propType">string</div>
+                        <div class="propDescription">user's display name (optional, may be empty if the user hasn't created an account)</div>
+                    </div>
+                </div>
+
+                <div ng-switch-when="multiCollaborator">
+                    <div class="type">
+                        Multiple collaborator
+                    </div>
+                    <div class="description">
+                        <div class="valueType">array of collaborator objects</div>
+                        Array of objects providing details about the collaborators in this field.
+
+                        <div class="propName">id</div>
+                        <div class="propType">string</div>
+                        <div class="propDescription">unique user id</div>
+
+                        <div class="propName">email</div>
+                        <div class="propType">string</div>
+                        <div class="propDescription">user's email address</div>
+
+                        <div class="propName">name</div>
+                        <div class="propType">string</div>
+                        <div class="propDescription">user's display name (optional, may be empty if the user hasn't created an account)</div>
+                    </div>
+                </div>
+
+                <div ng-switch-when="rating">
+                    <div class="type">
+                        Rating
+                    </div>
+                    <div class="description">
+                        <div class="valueType">number</div>
+                        A positive integer (e.g. "3 stars" is 3). A rating cannot be 0.
+                    </div>
+                </div>
+
+                <div ng-switch-when="richText">
+                    <div class="type">
+                        Long text (with rich text formatting enabled)
+                    </div>
+                    <div class="description">
+                        <div class="valueType">string</div>
+                        A Markdown-inspired markup language.
+                        <br/>
+                        <a href="https://support.airtable.com/hc/en-us/articles/360043256713">
+                            Learn more about using Markdown in long text's rich text formatting API.
+                        </a>
+                    </div>
+                </div>
+            </ng-switch>
+        </div>
+    </div>
+
+    <div class="code">
+            <div ng-switch on="column.type">
+                <div ng-switch-when="text">
+                    <div ng-if="hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:5">
+                            <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                        </p>
+                    </div>
+                    <div ng-if="!hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p ng-switch on="column.typeOptions.validatorName">
+                            <span ng-switch-when="url">
+                                <span hljs language="json">"https://airtable.com", "http://minesweeperonline.com"</span>
+                            </span>
+                            <span ng-switch-when="email">
+                                <span hljs language="json">"support@example.com", "sales@example.com"</span>
+                            </span>
+                            <span ng-switch-default>
+                                <span hljs language="json">"foo", "bar"</span>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div ng-switch-when="multilineText">
+                    <div ng-if="hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:5">
+                            <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                        </p>
+                    </div>
+                    <div ng-if="!hasSampleDataForColumn()">
+                        <h4>Example value</h4>
+                            <span hljs language="json">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel accumsan orci. Fusce interdum ipsum nec neque iaculis congue. Vivamus bibendum quam at sollicitudin vestibulum. Nunc suscipit nisl sit amet enim hendrerit pellentesque. Curabitur non fermentum orci."</span>
+                        </h4>
+                    </div>
+                </div>
+                <div ng-switch-when="number">
+                    <div ng-if="hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:5">
+                            <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                        </p>
+                    </div>
+                    <div ng-if="!hasSampleDataForColumn()">
+                        <h4>Example value</h4>
+                        <p ng-switch on="column.typeOptions.format">
+                            <span ng-switch-when="integer"><span hljs language="json">42</span></span>
+                            <span ng-switch-when="decimal"><span hljs language="json">42.2</span></span>
+                            <span ng-switch-when="currency"><span hljs language="json">42.21</span></span>
+                            <span ng-switch-when="percent"><span hljs language="json">42</span></span>
+                        </p>
+                    </div>
+                </div>
+                <div ng-switch-when="multiSelect">
+                    <h4>Possible values</h4>
+                    <span hljs compile="false" language="json" source="column | columnChoiceNames | prettyJson"></span>
+                </div>
+                <div ng-switch-when="select">
+                    <h4>Possible values</h4>
+                    <span hljs compile="false" language="json" source="column | columnChoiceNames | prettyJson"></span>
+                </div>
+                <div ng-switch-when="foreignKey">
+                    <h4>Example value</h4>
+                    <p>
+                        <span hljs language="json">["rec8116cdd76088af", "rec245db9343f55e8", "rec4f3bade67ff565"]</span>
+                    </p>
+                </div>
+                <div ng-switch-when="button">
+                    <h4>Example value</h4>
+                    <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:1">
+                        <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                    </p>
+                </div>
+                <div ng-switch-when="date">
+                    <div ng-if="hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:5">
+                            <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                        </p>
+                    </div>
+                    <div ng-if="!hasSampleDataForColumn()">
+                        <h4>Example value</h4>
+                        <p>
+                            <span hljs compile="false" language="json" source="'&#34;2014-09-05{{column.typeOptions.isDateTime ? 'T07:00:00.000Z' : ''}}&#34;'"></span>
+                        </p>
+                    </div>
+                </div>
+                <div ng-switch-when="phone">
+                    <h4>Example values</h4>
+                    <div ng-if="hasSampleDataForColumn()">
+                        <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:5">
+                            <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                        </p>
+                    </div>
+                    <div ng-if="!hasSampleDataForColumn()">
+                        <p>
+                            <span hljs language="json">"(415) 555-9876"</span>
+                        </p>
+                    </div>
+                </div>
+                <div ng-switch-when="multipleAttachment">
+                    <div ng-if="hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:2">
+                            <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                        </p>
+                    </div>
+                    <div ng-if="!hasSampleDataForColumn()">
+                        <h4>Example value</h4>
+                        <p>
+                            <span hljs language="json">
+[
+    {
+        "id": "att6f75cc83f1b648",
+        "size": 26317,
+        "url": "https://www.filepicker.io/api/file/5YTJXioCQG0tYWPw6OPw",
+        "type": "image/jpeg",
+        "filename": "33823_3_xl.jpg",
+        "thumbnails": {
+            "small": {
+                 "url": "https://www.filepicker.io/api/file/Dy5gioxaShSUvHX0LgIC",
+                 "width": 54,
+                 "height": 36
+             },
+            "large": {
+                 "url": "https://www.filepicker.io/api/file/ueYi00yRiqhuUn420UZA",
+                 "width": 197,
+                 "height": 131
+             }
+         }
+    }
+]
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div ng-switch-when="checkbox">
+                    <h4>Example value</h4>
+                    <p>
+                        <span hljs language="json">true</span>
+                    </p>
+                </div>
+                <div ng-switch-when="formula">
+                    <div ng-if="hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:5">
+                            <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                        </p>
+                    </div>
+                    <div ng-if="!hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p ng-switch on="column.typeOptions.displayType">
+                            <span ng-switch-when="createdTime">
+                                <span hljs compile="false" language="json" source="'&#34;2015-08-29{{column.typeOptions.isDateTime ? 'T07:00:00.000Z' : ''}}&#34;'"></span>
+                            </span>
+                            <span ng-switch-default>
+                                To see example values, try adding some data to <tablename></tablename>.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div ng-switch-when="rollup">
+                    <div ng-if="hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:5">
+                            <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                        </p>
+                    </div>
+                    <div ng-if="!hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p>
+                            To see example values, try adding some data to <tablename></tablename>.
+                        </p>
+                    </div>
+                </div>
+                <div ng-switch-when="count">
+                    <div ng-if="hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:5">
+                            <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                        </p>
+                    </div>
+                    <div ng-if="!hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p>
+                            To see example values, try adding some data to <tablename></tablename>.
+                        </p>
+                    </div>
+                </div>
+                <div ng-switch-when="lookup">
+                    <div ng-if="hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:5">
+                            <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                        </p>
+                    </div>
+                    <div ng-if="!hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p>
+                            To see example values, try adding some data to <tablename></tablename>.
+                        </p>
+                    </div>
+                </div>
+                <div ng-switch-when="autoNumber">
+                    <h4>Example values</h4>
+                    <p>
+                        <span hljs language="json">1</span>
+                    </p>
+                    <p>
+                        <span hljs language="json">2</span>
+                    </p>
+                    <p>
+                        <span hljs language="json">3</span>
+                    </p>
+                </div>
+                <div ng-switch-when="barcode">
+                    <div ng-if="hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:5">
+                            <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                        </p>
+                    </div>
+                    <div ng-if="!hasSampleDataForColumn()">
+                        <h4>Example value</h4>
+                        <p>
+                            <span hljs language="json">{
+    "text": "01234505",
+    "type": "upce",
+}</span>
+                        </p>
+                    </div>
+                </div>
+                <div ng-switch-when="collaborator">
+                    <div ng-if="hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:2">
+                            <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                        </p>
+                    </div>
+                    <div ng-if="!hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p>
+                            To see example values, try adding some data to <tablename></tablename>.
+                        </p>
+                    </div>
+                </div>
+                <div ng-switch-when="multiCollaborator">
+                    <div ng-if="hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:2">
+                            <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                        </p>
+                    </div>
+                    <div ng-if="!hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p>
+                            To see example values, try adding some data to <tablename></tablename>.
+                        </p>
+                    </div>
+                </div>
+                <div ng-switch-when="rating">
+                    <h4>Example value</h4>
+                    <div ng-if="hasSampleDataForColumn()">
+                        <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:1">
+                            <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                        </p>
+                    </div>
+                    <div ng-if="!hasSampleDataForColumn()">
+                        <p>
+                            <span hljs language="json">2</span>
+                        </p>
+                    </div>
+                </div>
+                <div ng-switch-when="richText">
+                    <div ng-if="hasSampleDataForColumn()">
+                        <h4>Example values</h4>
+                        <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:2">
+                            <span hljs compile="true" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                        </p>
+                    </div>
+                    <div ng-if="!hasSampleDataForColumn()">
+                        <h4>Example value</h4>
+                        <p>
+                            <span hljs language="json">
+[
+    {
+        "type": "paragraph",
+        "value": [
+            {
+                "type": "paragraphLine",
+                "value": [
+                    {
+                        "type": "text",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et nulla vulputate, sollicitudin risus sed, suscipit sapien. "
+                    },
+                    {
+                        "type": "text",
+                        "value": "Donec ac tempus velit, nec efficitur augue. Donec fermentum ex cursus, tincidunt justo ac, bibendum turpis",
+                        "attributes": {
+                            "bold": true,
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "paragraphLine",
+                "value": [
+                    {
+                        "type": "mention",
+                        "value": {
+                            "userName": "Waffles Wags-a-lot",
+                            "userId": "usrR2o0pNsHC4FdrT",
+                            "mentionId": "menE1i9oBaGX3DseR"
+                        },
+                        "attributes": {
+                            "bold": true
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</div>
+
+                                <div class="docSection" ng-controller="listExampleController">
+    <h2 section-name="table:{{table.nameForUrl}}:list">List {{table.name}} records</h2>
+
+    <div class="text">
+        <div ng-if="currentLanguage === 'curl'">
+            <p>
+                To list records in <tablename></tablename>, issue a <strong>GET</strong> request to the <tablename></tablename> endpoint.
+            </p>
+        </div>
+        <div ng-if="currentLanguage === 'javascript'">
+            <p>
+                To list records in <tablename></tablename>, use the <code>select</code> method.
+            </p>
+            <p>
+                <code>select</code> returns a query object. To fetch the records
+                matching that query, use the <code>eachPage</code> or
+                <code>firstPage</code> method of the query object.
+            </p>
+        </div>
+        <p>
+            Returned records do not include any fields with "empty" values, e.g. <code>""</code>, <code>[]</code>, or <code>false</code>.
+        </p>
+
+        <p ng-if="currentLanguage === 'curl'">
+            You can filter, sort, and format the results with the following query parameters. Note that these parameters need to be URL encoded. You can use our <a href="https://codepen.io/airtable/full/rLKkYB?baseId={{application.id}}&amp;tableId={{table.id}}" target="_blank" rel="noopener noreferrer">API URL encoder tool</a> to help with this. If you are using a helper library like <a href="https://github.com/Airtable/airtable.js" target="_blank" rel="noopener noreferrer">Airtable.js</a>, these parameters will be automatically encoded.
+        </p>
+
+        <p ng-if="currentLanguage === 'javascript'">
+            You can use the following parameters to filter, sort, and format the results:
+        </p>
+
+        <div class="pagination">
+            <div class="paginationName">
+                fields
+                <code class="type">array of strings</code>
+                <span class="optional">optional</span>
+            </div>
+            <div class="paginationDescription">
+                <p>
+                    Only data for fields whose names are in this list will
+                    be included in the result. If you don't need every field,
+                    you can use this parameter to reduce the amount of data
+                    transferred.
+                </p>
+                <ng-if ng-if="table.columns.length > 1">
+                    <p>
+                        For example, to only return data from
+                        <span class="columnName">{{table.columns[0].name}}</span> and <span class="columnName">{{table.columns[1].name}}</span>,
+                        <ng-switch on="currentLanguage">
+                            <ng-switch-when ng-switch-when="curl">send these two query parameters:</ng-switch-when>
+                            <ng-switch-when ng-switch-when="javascript">pass in:</ng-switch-when>
+                        </ng-switch>
+                    </p>
+                    <ng-switch on="currentLanguage">
+                        <ng-switch-when ng-switch-when="curl">
+                            <pre>fields%5B%5D={{table.columns[0].name | uriencode}}&amp;fields%5B%5D={{table.columns[1].name | uriencode}}</pre>
+                        </ng-switch-when>
+                        <ng-switch-when ng-switch-when="javascript">
+                            <pre>fields: [{{table.columns[0].name | prettyJson}}, {{table.columns[1].name | prettyJson}}]</pre>
+                        </ng-switch-when>
+                    </ng-switch>
+                </ng-if>
+            </div>
+
+            <div class="paginationName">
+                filterByFormula
+                <code class="type">string</code>
+                <span class="optional">optional</span>
+            </div>
+            <div class="paginationDescription">
+                <p>
+                    A <a href="https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference" target="_blank" rel="noopener noreferrer">formula</a>
+                    used to filter records. The formula will be evaluated for each record, and if the result is not
+                    <code class="type">0</code>,
+                    <code class="type">false</code>,
+                    <code class="type">""</code>,
+                    <code class="type">NaN</code>,
+                    <code class="type">[]</code>, or
+                    <code class="type">#Error!</code>
+                    the record will be included in the response.
+                </p>
+                <p>
+                    If combined with the <code>view</code> parameter, only records in that view which satisfy the formula will be returned.
+                </p>
+                <p>
+                    For example, to only include records where <span class="columnName">{{table.primaryColumnName}}</span> isn't empty, pass in <code>NOT({{'{' + table.primaryColumnName + '}'}} = '')</code> as a parameter like this:
+                </p>
+                <ng-switch on="currentLanguage">
+                    <pre ng-switch-when="curl">filterByFormula={{'NOT({' + table.primaryColumnName + "} = '')" | uriencode}}</pre>
+                    <pre ng-switch-when="javascript">filterByFormula: "NOT({{'{' + table.primaryColumnName + '}'}} = '')"</pre>
+                </ng-switch>
+            </div>
+
+            <div class="paginationName">
+                maxRecords
+                <code class="type">number</code>
+                <span class="optional">optional</span>
+            </div>
+            <div class="paginationDescription">
+                The maximum total number of records that will be returned in your requests. If this value is larger than <code>pageSize</code> (which is 100 by default), you may have to load multiple pages to reach this total. See the Pagination section below for more.
+            </div>
+
+            <div class="paginationName">
+                pageSize
+                <code class="type">number</code>
+                <span class="optional">optional</span>
+            </div>
+            <div class="paginationDescription">
+                The number of records returned in each request. Must be less than or equal to 100.
+                Default is 100.
+                See the Pagination section below for more.
+            </div>
+
+            <div class="paginationName">
+                sort
+                <code class="type">array of objects</code>
+                <span class="optional">optional</span>
+            </div>
+            <div class="paginationDescription">
+                <p>
+                    A list of sort objects that specifies how the records will
+                    be ordered. Each sort object must have a <code>field</code>
+                    key specifying the name of the field to sort on, and an
+                    optional <code>direction</code> key that is either <code>"asc"</code>
+                    or <code>"desc"</code>. The default direction is <code>"asc"</code>.
+                </p>
+
+                <p>
+                    The <code>sort</code> parameter overrides the sorting of the view specified in the <code>view</code> parameter. If neither the <code>sort</code> nor the <code>view</code> parameter is included, the order of records is arbitrary.
+                </p>
+
+                <ng-show ng-show="currentLanguage === 'curl'">
+                    <p>
+                        For example, to sort records by <span class="columnName">{{table.primaryColumnName}}</span>
+                        in descending order, send these two query parameters:
+                    </p>
+                    <pre>sort%5B0%5D%5Bfield%5D={{table.primaryColumnName | uriencode}}</pre>
+                    <pre>sort%5B0%5D%5Bdirection%5D=desc</pre>
+                </ng-show>
+
+                <ng-show ng-show="currentLanguage === 'javascript'">
+                    <p>
+                        For example, to sort records by <span class="columnName">{{table.primaryColumnName}}</span>
+                        in descending order, pass in:
+                    </p>
+                    <pre>[{field: {{table.primaryColumnName | prettyJson}}, direction: "desc"}]</pre>
+                </ng-show>
+            </div>
+
+            <div class="paginationName">
+                view
+                <code class="type">string</code>
+                <span class="optional">optional</span>
+            </div>
+            <div class="paginationDescription">
+                The name or ID of a view in the <tablename></tablename> table.
+                If set, only the records in that view will be returned.
+                The records will be sorted according to the order of the view unless the <code>sort</code> parameter is included, which overrides that order.
+                Fields hidden in this view will be returned in the results. To only return a subset of fields, use the <code>fields</code> parameter.
+            </div>
+
+            <div class="paginationName">
+                cellFormat
+                <code class="type">string</code>
+                <span class="optional">optional</span>
+            </div>
+            <div class="paginationDescription">
+                <p>The format that should be used for cell values. Supported values are:</p>
+
+                <p>
+                    <code>json</code>: cells will be formatted as JSON, depending on the field type.
+                </p>
+                <p>
+                    <code>string</code>: cells will be formatted as user-facing strings, regardless of
+                    the field type. <b>Note:</b> You should not rely on the format of these strings, as it
+                    is subject to change.
+                </p>
+
+                <p>
+                    The default is <code>json</code>.
+                </p>
+            </div>
+
+            <div class="paginationName">
+                timeZone
+                <code class="type">string</code>
+                <span class="optional">optional</span>
+            </div>
+            <div class="paginationDescription">
+                <p>
+                    The <a href="https://support.airtable.com/hc/en-us/articles/216141558-Supported-timezones-for-SET-TIMEZONE">time zone</a>
+                    that should be used to format dates when using <code>string</code> as the <code>cellFormat</code>. This parameter is
+                    required when using <code>string</code> as the <code>cellFormat</code>.
+                </p>
+            </div>
+
+            <div class="paginationName">
+                userLocale
+                <code class="type">string</code>
+                <span class="optional">optional</span>
+            </div>
+            <div class="paginationDescription">
+                <p>
+                    The <a href="https://support.airtable.com/hc/en-us/articles/220340268-Supported-locale-modifiers-for-SET-LOCALE">user locale</a>
+                    that should be used to format dates when using <code>string</code> as the <code>cellFormat</code>. This parameter is
+                    required when using <code>string</code> as the <code>cellFormat</code>.
+                </p>
+            </div>
+        </div>
+
+        <p ng-if="currentLanguage === 'curl'">
+            These parameters need to be <a href="https://codepen.io/airtable/full/rLKkYB?baseId={{application.id}}&amp;tableId={{table.id}}" target="_blank" rel="noopener noreferrer">URL encoded</a>. If you are using a helper library like <a href="https://github.com/Airtable/airtable.js" target="_blank" rel="noopener noreferrer">Airtable.js</a>, they will be automatically encoded.
+        </p>
+
+        <h3>Pagination</h3>
+        <p>
+            The server returns one page of records at a time.
+            Each page will contain <code>pageSize</code> records, which
+            is 100 by default.
+        </p>
+        <div ng-if="currentLanguage === 'curl'">
+            <p>
+                If there are more records, the response will contain an <code>offset</code>.
+                To fetch the next page of records, include <code>offset</code> in
+                the next request's parameters.
+            </p>
+        </div>
+
+        <div ng-if="currentLanguage === 'javascript'">
+            <p>
+                To fetch the next page of records, call <code>fetchNextPage</code>.
+            </p>
+        </div>
+
+        <p>
+            Pagination will stop when you've reached the end of your table. If the <code>maxRecords</code> parameter is passed, pagination will stop once you've reached this maximum.
+        </p>
+    </div>
+    <div class="code">
+        <div ng-if="currentLanguage === 'curl'">
+            <h4>Example request</h4>
+<span hljs compile="true">
+curl "{{getCurlUrl(table)}}?maxRecords={{table.numRecordsToList}}{{amp}}view={{table.defaultView.name|uriencode}}" \
+  -H "Authorization: Bearer {{apiKey}}"
+</span>
+
+            <h4>Example response</h4>
+            <div ng-if="!table.isEmpty">
+                <div hljs source="table | exampleResultSetJson: table.numRecordsToList"></div>
+            </div>
+            <div ng-if="table.isEmpty">
+                <div ng-if="table.isEmptyDueToFilter">
+                    To see an example, please remove filters from the first view in <tablename></tablename> until records appear.
+                </div>
+                <div ng-if="!table.isEmptyDueToFilter">
+                    To see an example, please add some non-empty records to <tablename></tablename>.
+                </div>
+            </div>
+        </div>
+        <div ng-if="currentLanguage === 'javascript'">
+            <h4>Code</h4>
+<span hljs compile="true">
+var Airtable = require('airtable');
+var base = new Airtable({apiKey: '{{apiKey}}'}).base('{{application.id}}');
+
+base('{{encodeForSingleQuotedStringInJsCodeSample(table.name)}}').select({
+    // Selecting the first 3 records in {{table.defaultView.name}}:
+    maxRecords: 3,
+    view: {{table.defaultView.name | prettyJson}}
+}).eachPage(function page(records, fetchNextPage) {
+    // This function (`page`) will get called for each page of records.
+
+    records.forEach(function(record) {
+        console.log('Retrieved', record.get('{{encodeForSingleQuotedStringInJsCodeSample(table.primaryColumnName)}}'));
+    });
+
+    // To fetch the next page of records, call `fetchNextPage`.
+    // If there are more records, `page` will get called again.
+    // If there are no more records, `done` will get called.
+    fetchNextPage();
+
+}, function done(err) {
+    if (err) { console.error(err); return; }
+});
+</span>
+            <h4>Output</h4>
+            <div ng-if="table.isEmpty">
+                <div ng-if="table.isEmptyDueToFilter">
+                    To see an example, please remove filters from the first view in <tablename></tablename> until records appear.
+                </div>
+                <div ng-if="!table.isEmptyDueToFilter">
+                    To see an example, please add some non-empty records to <tablename></tablename>.
+                </div>
+            </div>
+            <div ng-if="!table.isEmpty">
+                <div ng-repeat="row in table | firstSampleRows: table.numRecordsToList">
+<span hljs compile="true">
+Retrieved {{row.fields[table.primaryColumnName]}}
+</span>
+                </div>
+            </div>
+
+        <h4>Fetch first page</h4>
+<span hljs compile="true">
+// If you only want the first page of records, you can
+// use `firstPage` instead of `eachPage`.
+base('{{encodeForSingleQuotedStringInJsCodeSample(table.name)}}').select({
+    view: '{{encodeForSingleQuotedStringInJsCodeSample(table.defaultView.name)}}'
+}).firstPage(function(err, records) {
+    if (err) { console.error(err); return; }
+    records.forEach(function(record) {
+        console.log('Retrieved', record.get('{{encodeForSingleQuotedStringInJsCodeSample(table.primaryColumnName)}}'));
+    });
+});
+</span>
+
+        </div>
+
+    </div>
+
+    <hr />
+
+    <div class="text">
+        <p> Iteration may timeout due to client inactivity or
+            server restarts. In that case, the client will receive a
+            422 response with error message <code>LIST_RECORDS_ITERATOR_NOT_AVAILABLE</code>.
+            It may then restart iteration from the beginning.
+        </p>
+    </div>
+
+    <div class="code">
+    </div>
+</div>
+
+                                <div class="docSection" ng-controller="updateExampleController">
+    <h2 section-name="table:{{table.nameForUrl}}:retrieve">Retrieve a {{table.name}} record</h2>
+
+    <div class="text">
+        <p>
+            <span ng-if="currentLanguage === 'curl'">
+                To retrieve an existing record in <tablename></tablename> table, issue a <strong>GET</strong> request to the record endpoint.
+            </span>
+            <span ng-if="currentLanguage === 'javascript'">
+                To retrieve an existing record in <tablename></tablename> table, use the <code>find</code> method.
+            </span>
+        </p>
+        <p>
+            Any "empty" fields (e.g. <code>""</code>, <code>[]</code>, or <code>false</code>) in the record will not be returned.
+        </p>
+        <p ng-if="table.columns | areAnyOfType: 'multipleAttachment'">
+            In <a href="#{{currentLanguage}}/table:{{table.nameForUrl}}:fields">attachment objects</a> included in the retrieved record (<span ng-bind-html="table.columns | commaSeparatedListHtmlForType: 'multipleAttachment'"></span>), only <code>id</code>, <code>url</code>, and <code>filename</code> are always returned. Other attachment properties may not be included.
+        </p>
+    </div>
+
+    <div class="code" ng-if="!hasSampleRows">
+        <h4>Example request &amp; response</h4>
+        <div ng-if="table.isEmptyDueToFilter">
+            To see an example, please remove filters from the first view in <tablename></tablename> until records appear.
+        </div>
+        <div ng-if="!table.isEmptyDueToFilter">
+            To see an example, please add some non-empty records to <tablename></tablename>.
+        </div>
+    </div>
+    <div class="code" ng-if="hasSampleRows">
+        <div ng-if="currentLanguage === 'curl'">
+            <h4>Example request</h4>
+<span hljs compile="true">
+curl {{getCurlUrl(table, firstSampleRow.id)}} \
+  -H "Authorization: Bearer {{apiKey}}"
+</span>
+            <h4>Example response</h4>
+            <div hljs source="firstSampleRow | prettyJson"></div>
+        </div>
+
+        <div ng-if="currentLanguage === 'javascript'">
+            <h4>Code</h4>
+<span hljs compile="true">
+var Airtable = require('airtable');
+var base = new Airtable({apiKey: '{{apiKey}}'}).base('{{application.id}}');
+
+base('{{encodeForSingleQuotedStringInJsCodeSample(table.name)}}').find('{{firstSampleRow.id}}', function(err, record) {
+    if (err) { console.error(err); return; }
+    console.log('Retrieved', record.id);
+});
+</span>
+
+            <h4>Output</h4>
+            <div hljs compile="true">Retrieved {{firstSampleRow.id}}</div>
+        </div>
+    </div>
+</div>
+
+                                <div class="docSection" ng-controller="createExampleController">
+    <h2 section-name="table:{{table.nameForUrl}}:create">Create {{table.name}} records</h2>
+
+    <div class="text">
+        <p>
+            To create new records,
+            <ng-if ng-if="currentLanguage === 'curl'">
+                issue a <strong>POST</strong> request to the <tablename></tablename> endpoint.
+            </ng-if>
+            <ng-if ng-if="currentLanguage === 'javascript'">
+                use the <code>create</code> method.
+            </ng-if>
+        </p>
+
+        <p>
+            <ng-if ng-if="currentLanguage === 'curl'">
+                Your request body should include
+            </ng-if>
+            <ng-if ng-if="currentLanguage === 'javascript'">
+                The first argument should be
+            </ng-if>
+            an array of up to 10 record objects.
+            Each of these objects should have one key, <code>fields</code>, which contains all of your record's cell values by field name.
+            You can include all, some, or none of the field values.
+        </p>
+
+        <p>
+            Returns an array of record objects created if the call succeeded, including record IDs which will uniquely identify the records within <appname></appname>.
+        </p>
+
+        <p ng-if="table.columns | areAnyOfType: 'multipleAttachment'">
+            To create new attachments in
+            <span ng-bind-html="table.columns | commaSeparatedListHtmlForType: 'multipleAttachment'"></span>,
+            set the field value to an
+            <a href="#{{currentLanguage}}/table:{{table.nameForUrl}}:fields">array of attachment objects</a>.
+            When creating an attachment, <code>url</code> is required, and <code>filename</code> is optional.
+            Airtable will download the file at the given <code>url</code> and keep its own copy of it.
+            All other attachment object properties will be generated server-side soon afterward.
+        </p>
+
+        <p ng-if="table.columns | areAnyOfType: 'collaborator'">
+            To set a collaborator in
+            <span ng-bind-html="table.columns | commaSeparatedListHtmlForType: 'collaborator'"></span>,
+            set the field value to a
+            <a href="#{{currentLanguage}}/table:{{table.nameForUrl}}:fields">user object</a>.
+            A user object must contain either an <code>id</code> or an <code>email</code> that uniquely identifies
+            a user who this base is shared with.
+            An <code>id</code> takes precedence over <code>email</code> if both are present.
+            Any missing properties will be filled in automatically based on the matching user.
+        </p>
+
+        <p ng-if="table.columns | areAnyOfType: 'multiCollaborator'">
+            To add collaborators to
+            <span ng-bind-html="table.columns | commaSeparatedListHtmlForType: 'multiCollaborator'"></span>,
+            set the field value to an
+            <a href="#{{currentLanguage}}/table:{{table.nameForUrl}}:fields">array of user objects</a>.
+            Each user object must contain either an <code>id</code> or an <code>email</code> that uniquely identifies
+            a user who this base is shared with.
+            An <code>id</code> takes precedence over <code>email</code> if both are present.
+            Any missing properties will be filled in automatically based on the matching user.
+        </p>
+
+        <p ng-if="table.columns | areAnyComputed">
+            Values for <span ng-bind-html="table.columns | commaSeparatedListHtmlForComputed"></span> are automatically computed by Airtable and cannot be directly created.
+        </p>
+
+        <p>
+            The Airtable API will perform best-effort automatic data conversion from string values
+            if the <code>typecast</code> parameter is passed
+            <ng-if ng-if="hasSampleRows">
+                in (<a href ng-click="toggleShowTypecastOption()">click to {{showTypecastOption ? 'hide' : 'show'}} example</a>).
+            </ng-if>
+            <ng-if ng-if="!hasSampleRows">
+                in.
+            </ng-if>
+            Automatic conversion is disabled by default to ensure data integrity, but it may be helpful
+            for integrating with 3rd party data sources.
+        </p>
+
+        <p>
+            You can also include a single record object at the top level.
+            <a href ng-if="hasSampleRows" ng-click="toggleShowSingleRecordOperations()">Click here to {{showSingleRecordOperations ? 'hide the' : 'show an'}} example.</a>
+        </p>
+    </div>
+
+    <div class="code" ng-if="!hasSampleRows">
+        <h4>Example request &amp; response</h4>
+        <div ng-if="table.isEmptyDueToFilter">
+            To see an example, please remove filters from the first view in <tablename></tablename> until records appear.
+        </div>
+        <div ng-if="!table.isEmptyDueToFilter">
+            To see an example, please add some non-empty records to <tablename></tablename>.
+        </div>
+    </div>
+
+    <div class="code" ng-if="hasSampleRows">
+        <div ng-if="currentLanguage === 'curl'">
+            <h4>Example request</h4>
+            <span hljs source="createExampleCurlRequest()"></span>
+
+            <h4>Example response</h4>
+            <span hljs source="createExampleCurlResponse()"></span>
+        </div>
+
+        <div ng-if="currentLanguage === 'javascript'">
+            <h4>Code</h4>
+            <span hljs source="createExampleJsCode()"></span>
+
+            <h4>Output</h4>
+            <div hljs source="createExampleJsOutput()"></div>
+        </div>
+    </div>
+</div>
+
+                                <div class="docSection" ng-controller="updateExampleController">
+    <h2 section-name="table:{{table.nameForUrl}}:update">Update {{table.name}} records</h2>
+    <div class="text">
+        <p>
+            To update <tablename></tablename> records,
+            <ng-if ng-if="currentLanguage === 'curl'">
+                issue a request to the <tablename></tablename> endpoint.
+                A <strong>PATCH</strong> request will only update the fields you specify, leaving the rest as they were.
+                A <strong>PUT</strong> request will perform a destructive update and clear all unspecified cell values.
+            </ng-if>
+            <ng-if ng-if="currentLanguage === 'javascript'">
+                use the <code>update</code> or <code>replace</code> method.
+                An <code>update</code> will only update the fields you specify, leaving the rest as they were.
+                A <code>replace</code> will perform a destructive update and clear all unspecified cell values.
+            </ng-if>
+            <ng-if ng-if="hasSampleRows">
+                The example at the right uses the
+                <ng-if ng-if="isShowingDestructiveUpdate">
+                    destructive
+                    <strong ng-if="currentLanguage === 'curl'">PUT</strong>
+                    <code ng-if="currentLanguage === 'javascript'">replace</code>
+                </ng-if>
+                <ng-if ng-if="!isShowingDestructiveUpdate">
+                    non-destructive
+                    <strong ng-if="currentLanguage === 'curl'">PATCH</strong>
+                    <code ng-if="currentLanguage === 'javascript'">update</code>
+                </ng-if>
+                method.
+                <a href ng-click="toggleIsShowingDestructiveUpdate()">
+                    Click here to show a
+                    <ng-if ng-if="isShowingDestructiveUpdate">
+                        non-destructive
+                        <ng-if ng-if="currentLanguage === 'curl'">
+                            <strong>PATCH</strong> request.
+                        </ng-if>
+                        <ng-if ng-if="currentLanguage === 'javascript'">
+                            <code>update</code> call.
+                        </ng-if>
+                    </ng-if>
+                    <ng-if ng-if="!isShowingDestructiveUpdate">
+                        destructive
+                        <ng-if ng-if="currentLanguage === 'curl'">
+                            <strong>PUT</strong> request.
+                        </ng-if>
+                        <ng-if ng-if="currentLanguage === 'javascript'">
+                            <code>replace</code> call.
+                        </ng-if>
+                    </ng-if>
+                </a>
+            </ng-if>
+        </p>
+
+        <p>
+            <ng-if ng-if="currentLanguage === 'curl'">
+                Your request body should include
+            </ng-if>
+            <ng-if ng-if="currentLanguage === 'javascript'">
+                The first argument should be
+            </ng-if>
+            an array of up to 10 record objects.
+            Each of these objects should have an <code>id</code> property representing the record ID and a <code>fields</code> property which contains all of your record's cell values by field name.
+            You can include all, some, or none of the field values.
+        </p>
+
+        <p ng-if="table.columns | areAnyOfType: 'multipleAttachment'">
+            To add attachments to <span ng-bind-html="table.columns | commaSeparatedListHtmlForType: 'multipleAttachment'"></span>, add new <a href="#{{currentLanguage}}/table:{{table.nameForUrl}}:fields">attachment objects</a> to the existing array. Be sure to include all existing attachment objects that you wish to retain. For the new attachments being added, <code>url</code> is required, and <code>filename</code> is optional. To remove attachments, include the existing array of attachment objects, excluding any that you wish to remove.
+        </p>
+
+        <p ng-if="table.columns | areAnyOfType: 'foreignKey'">
+            To link to new records in <span ng-bind-html="table.columns | commaSeparatedListHtmlForType: 'foreignKey'"></span>, add new linked record IDs to the existing array. Be sure to include all existing linked record IDs that you wish to retain. To unlink records, include the existing array of record IDs, excluding any that you wish to unlink.
+        </p>
+
+        <p ng-if="table.columns | areAnyOfType: 'collaborator'">
+            To set a collaborator in
+            <span ng-bind-html="table.columns | commaSeparatedListHtmlForType: 'collaborator'"></span>,
+            set the field value to a
+            <a href="#{{currentLanguage}}/table:{{table.nameForUrl}}:fields">user object</a>.
+            A user object must contain either an <code>id</code> or an <code>email</code> that uniquely identifies
+            a user who this base is shared with.
+            An <code>id</code> takes precedence over <code>email</code> if both are present.
+            Any missing properties will be filled in automatically based on the matching user.
+        </p>
+
+        <p ng-if="table.columns | areAnyOfType: 'multiCollaborator'">
+            To add collaborators to
+            <span ng-bind-html="table.columns | commaSeparatedListHtmlForType: 'multiCollaborator'"></span>,
+            set the field value to an
+            <a href="#{{currentLanguage}}/table:{{table.nameForUrl}}:fields">array of user objects</a>.
+            Be sure to include all existing user objects that you wish to retain, and exclude any that you wish to deselect.
+            Each new user object must contain either an <code>id</code> or an <code>email</code> that uniquely identifies
+            a user who this base is shared with.
+            An <code>id</code> takes precedence over <code>email</code> if both are present.
+            Any missing properties will be filled in automatically based on the matching user.
+        </p>
+
+        <p ng-if="table.columns | areAnyOfType: 'multiSelect'">
+            To select new options in  <span ng-bind-html="table.columns | commaSeparatedListHtmlForType: 'multiSelect'"></span>, add new option names to the existing array. Be sure to include all existing option names that you wish to retain. To deselect options, include the existing array of option names, excluding any that you wish to deselect.
+        </p>
+
+        <p ng-if="table.columns | areAnyOfType: 'multilineText'">
+            <span ng-bind-html="table.columns | commaSeparatedListHtmlForType: 'multilineText'"></span> may contain "mention tokens". A <em>mention token</em> corresponds to a "@mention" in Airtable's user interface; here in the API it will look like <code style="color: #888;">&lt;airtable:mention id="menE1i9oBaGX3DseR"&gt;@Alex&lt;/airtable:mention&gt;</code>. Mention tokens cannot be created via this API and should be left intact (or wholly removed) when updating long text fields.
+        </p>
+
+        <p ng-if="table.columns | areAnyComputed">
+            Values for <span ng-bind-html="table.columns | commaSeparatedListHtmlForComputed"></span> are automatically computed by Airtable and cannot be directly updated.
+            You cannot clear these, even with a
+            <ng-if ng-if="currentLanguage === 'curl'">
+                <code>PUT</code> request.
+            </ng-if>
+            <ng-if ng-if="currentLanguage === 'javascript'">
+                <code>replace</code> call.
+            </ng-if>
+        </p>
+
+        <p>
+            Automatic data conversion for update actions can be enabled via <code>typecast</code> parameter.
+            See <a href="#{{currentLanguage}}/table:{{table.nameForUrl}}:create">create record</a> for details.
+        </p>
+
+        <p>
+            You can also include a single record object at the top level.
+            <a href ng-if="hasSampleRows" ng-click="toggleShowSingleRecordOperations()">Click here to {{showSingleRecordOperations ? 'hide the' : 'show an'}} example.</a>
+        </p>
+    </div>
+
+    <div class="code" ng-if="!hasSampleRows">
+        <h4>Example request &amp; response</h4>
+        <div ng-if="table.isEmptyDueToFilter">
+            To see an example, please remove filters from the first view in <tablename></tablename> until records appear.
+        </div>
+        <div ng-if="!table.isEmptyDueToFilter">
+            To see an example, please add some non-empty records to <tablename></tablename>.
+        </div>
+    </div>
+    <div class="code" ng-if="hasSampleRows">
+        <div ng-if="currentLanguage === 'curl'">
+            <h4>Example request</h4>
+            <span hljs source="updateExampleCurlRequest()"></span>
+
+            <h4>Example response</h4>
+            <span hljs source="updateExampleCurlResponse()"></span>
+        </div>
+        <div ng-if="currentLanguage === 'javascript'">
+            <h4>Code</h4>
+            <span hljs language="javascript" source="updateExampleJsRequest()"></span>
+
+            <h4>Output</h4>
+            <span hljs source="updateExampleJsResponse()"></span>
+        </div>
+    </div>
+</div>
+
+                                <div class="docSection" ng-controller="deleteExampleController">
+    <h2 section-name="table:{{table.nameForUrl}}:delete">Delete {{table.name}} records</h2>
+    <div class="text">
+        <p>
+            To delete <tablename></tablename> records,
+            <ng-if ng-if="currentLanguage === 'curl'">
+                issue a <strong>DELETE</strong> request to the <tablename></tablename> endpoint.
+            </ng-if>
+            <ng-if ng-if="currentLanguage === 'javascript'">
+                use the <code>destroy</code> method.
+            </ng-if>
+        </p>
+
+        <p ng-if="currentLanguage === 'curl'">
+            Your request should include a URL-encoded array of up to 10 record IDs to delete.
+        </p>
+        <p ng-if="currentLanguage === 'javascript'">
+            The first parameter to <code>destroy</code> is an array of up to 10 record IDs to delete.
+        </p>
+
+        <p>
+            You can also
+            <ng-if ng-if="currentLanguage === 'curl'">
+                issue a <strong>DELETE</strong> request to the record endpoint
+            </ng-if>
+            <ng-if ng-if="currentLanguage === 'javascript'">
+                set the first parameter to a record ID
+            </ng-if>
+            to delete a single record.
+            <a href ng-if="hasSampleRows" ng-click="toggleShowSingleRecordOperations()">Click here to {{showSingleRecordOperations ? 'hide the' : 'show an'}} example.</a>
+        </p>
+    </div>
+
+    <div class="code" ng-if="!hasSampleRows">
+        <h4>Example request &amp; response</h4>
+        <div ng-if="table.isEmptyDueToFilter">
+            To see an example, please remove filters from the first view in <tablename></tablename> until records appear.
+        </div>
+        <div ng-if="!table.isEmptyDueToFilter">
+            To see an example, please add some non-empty records to <tablename></tablename>.
+        </div>
+    </div>
+
+    <div class="code" ng-if="hasSampleRows">
+        <div ng-if="currentLanguage === 'curl'">
+            <h4>Example request</h4>
+            <span hljs source="deleteExampleCurlRequest()"></span>
+
+            <h4>Example response</h4>
+            <span hljs source="deleteExampleCurlResponse()"></span>
+        </div>
+
+        <div ng-if="currentLanguage === 'javascript'">
+            <h4>Code</h4>
+            <span hljs source="deleteExampleJsCode()"></span>
+
+            <h4>Output</h4>
+            <span hljs source="deleteExampleJsOutput()"></span>
+        </div>
+    </div>
+</div>
+
+                            </div>
+
+                            <h1 section-name="errors">Errors</h1>
+                            <div class="docSection errorCodes">
+    <div class="text">
+        <p>
+            The <appname></appname> API follows HTTP status code semantics. 2xx codes signify success, 4xx mostly represent user error, 5xx generally correspond to a server error. The error messages will return a JSON-encoded body that contains <code>error</code> and <code>message</code> fields. Those will provide specific error condition and human-readable message to identify what caused the error.
+        </p>
+    </div>
+
+    <h2 section-name="errors:successcode">
+        Success code
+    </h2>
+    <div class="text">
+        <div class="codesRow">
+            <div class="statusCode">
+                <code>200</code>
+            </div>
+            <div class="message">
+                OK
+            </div>
+            <div class="description">
+                Request completed successfully.
+            </div>
+        </div>
+    </div>
+
+    <h2 section-name="errors:usererrorcodes">
+        User error codes
+    </h2>
+    <div class="text">
+        <p>
+            These errors generally indicate a problem on the client side. If you are getting one of these, check your code and the request details.
+        </p>
+        <div class="codesRow">
+            <div class="statusCode">
+                <code>400</code>
+            </div>
+            <div class="message">
+                Bad Request
+            </div>
+            <div class="description">
+                The request encoding is invalid; the request can't be parsed as a valid JSON.
+            </div>
+        </div>
+        <div class="codesRow">
+            <div class="statusCode">
+                <code>401</code>
+            </div>
+            <div class="message">
+                Unauthorized
+            </div>
+            <div class="description">
+                Accessing a protected resource without authorization or with invalid credentials.
+            </div>
+        </div>
+        <div class="codesRow">
+            <div class="statusCode">
+                <code>402</code>
+            </div>
+            <div class="message">
+                Payment Required
+            </div>
+            <div class="description">
+                The account associated with the API key making requests hits a quota that can be increased by upgrading the Airtable account plan.
+            </div>
+        </div>
+        <div class="codesRow">
+            <div class="statusCode">
+                <code>403</code>
+            </div>
+            <div class="message">
+                Forbidden
+            </div>
+            <div class="description">
+                Accessing a protected resource with API credentials that don't have access to that resource.
+            </div>
+        </div>
+        <div class="codesRow">
+            <div class="statusCode">
+                <code>404</code>
+            </div>
+            <div class="message">
+                Not Found
+            </div>
+            <div class="description">
+                Route or resource is not found. This error is returned when the request hits an undefined route, or if the resource doesn't exist (e.g. has been deleted).
+            </div>
+        </div>
+        <div class="codesRow">
+            <div class="statusCode">
+                <code>413</code>
+            </div>
+            <div class="message">
+                Request Entity Too Large
+            </div>
+            <div class="description">
+                The request exceeded the maximum allowed payload size. You shouldn't encounter this under normal use.
+            </div>
+        </div>
+        <div class="codesRow">
+            <div class="statusCode">
+                <code>422</code>
+            </div>
+            <div class="message">
+                Invalid Request
+            </div>
+            <div class="description">
+                The request data is invalid. This includes most of the base-specific validations. You will receive a detailed error message and code pointing to the exact issue.
+            </div>
+        </div>
+    </div>
+
+    <h2 section-name="errors:servererrorcodes">
+        Server error codes
+    </h2>
+    <div class="text">
+        <p>
+            These errors generally represent an error on our side. In the event of a 5xx error code, detailed information about the error will be automatically recorded, and Airtable's developers will be notified.
+        </p>
+        <div class="codesRow">
+            <div class="statusCode">
+                <code>500</code>
+            </div>
+            <div class="message">
+                Internal Server Error
+            </div>
+            <div class="description">
+                The server encountered an unexpected condition.
+            </div>
+        </div>
+        <div class="codesRow">
+            <div class="statusCode">
+                <code>502</code>
+            </div>
+            <div class="message">
+                Bad Gateway
+            </div>
+            <div class="description">
+                Airtable's servers are restarting or an unexpected outage is in progress. You should generally not receive this error, and requests are safe to retry.
+            </div>
+        </div>
+        <div class="codesRow">
+            <div class="statusCode">
+                <code>503</code>
+            </div>
+            <div class="message">
+                Service Unavailable
+            </div>
+            <div class="description">
+                The server could not process your request in time. The server could be temporarily unavailable, or it could have timed out processing your request. You should retry the request with backoffs.
+            </div>
+        </div>
+    </div>
+</div>
+
+                        </div>
+
+                        <div class="codeBackground"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
