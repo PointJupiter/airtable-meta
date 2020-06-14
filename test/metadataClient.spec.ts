@@ -1,6 +1,6 @@
 import * as nock from 'nock'
 import * as mock from './mock'
-import { AirtableClient } from '../src/metadataClient'
+import { AirtableMetaClient } from '../src/metadataClient'
 
 const csrf = 'testcsrftoken'
 const baseId = 'appa4Jy2VNe3Qx3Kt'
@@ -10,7 +10,7 @@ const creds = {
   _csrf: csrf
 }
 
-let client: AirtableClient
+let client: AirtableMetaClient
 
 describe('metadata client', () => {
   beforeAll(() => {
@@ -22,7 +22,7 @@ describe('metadata client', () => {
   })
 
   beforeEach(() => {
-    client = new AirtableClient(creds)
+    client = new AirtableMetaClient(creds)
   })
 
   afterEach(() => {
@@ -31,17 +31,18 @@ describe('metadata client', () => {
 
   describe('instatiation', () => {
     test('should be able to create client instance with credentials', () => {
-      const client = new AirtableClient(creds)
+      const client = new AirtableMetaClient(creds)
 
-      expect(client).toBeInstanceOf(AirtableClient)
+      expect(client).toBeInstanceOf(AirtableMetaClient)
     })
 
     test('should be able to create client instance passing API url', () => {
-      const client = new AirtableClient({
+      const client = new AirtableMetaClient({
         ...creds,
         apiUrl: 'https://test.airtable.com'
       })
-      expect(client).toBeInstanceOf(AirtableClient)
+
+      expect(client).toBeInstanceOf(AirtableMetaClient)
     })
   })
 

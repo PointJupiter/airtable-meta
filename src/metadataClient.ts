@@ -1,12 +1,12 @@
 import got, { Got } from 'got'
 import { CookieJar } from 'tough-cookie'
 import * as DomParser from 'dom-parser'
-import { AirtableClientOptions, Base } from './interfaces'
+import { ClientOptions, Base } from './interfaces'
 
-export class AirtableClient {
+export class AirtableMetaClient {
   private readonly baseClient: Got
 
-  constructor (private readonly params: AirtableClientOptions) {
+  constructor (private readonly params: ClientOptions) {
     this.baseClient = got.extend({
       prefixUrl: params.apiUrl ?? 'https://airtable.com',
       headers: {

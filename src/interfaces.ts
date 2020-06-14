@@ -1,4 +1,4 @@
-export type AirtableClientOptions = {
+export type ClientOptions = {
   email: string
   password: string
   apiUrl?: string

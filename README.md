@@ -1,6 +1,4 @@
-# Airtable client for TypeScript
-
-Status: work in progress.
+# Airtable Metadata client for TypeScript
 
 ### Installing
 
