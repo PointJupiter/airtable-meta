@@ -52,8 +52,7 @@ export enum ColumnType {
 export type Column = TextColumn | MultilineTextColumn | RichTextColumn |
   MultipleAttachmentColumn | CheckboxColumn | SelectColumn | CollaboratorColumn |
   DateColumn | PhoneColumn | NumberColumn | RatingColumn | FormulaColumn |
-  ForeignKeyColumn | LookupColumn | RollupColumn |
-  AutoNumberColumn | BarcodeColumn
+  ForeignKeyColumn | LookupColumn | RollupColumn | AutoNumberColumn | BarcodeColumn
 
 interface BaseColumn {
   id: string
