@@ -1,7 +1,71 @@
 {
-  "name": "content-engine-metadata-client",
+  "name": "@pointjupiter/airtable-meta",
   "version": "1.0.0",
-  "main": "index.js",
-  "author": "Point Jupiter",
-  "license": "MIT"
+  "description": "Airtable Metadata client for TypeScript",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint {src,test}/**/*.ts",
+    "build": "tsc",
+    "docs": "typedoc",
+    "prepublish": "rimraf lib && tsc"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "yarn lint"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn test",
+      "pre-push": "yarn test"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PointJupiter/airtable-meta.git"
+  },
+  "keywords": [
+    "airtable",
+    "api",
+    "client",
+    "metadata",
+    "data"
+  ],
+  "author": "Point Jupiter <hello@pointjupiter.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PointJupiter/airtable-meta/issues"
+  },
+  "homepage": "https://github.com/PointJupiter/airtable-meta#readme",
+  "dependencies": {
+    "dom-parser": "^0.1.6",
+    "got": "^11.3.0",
+    "tough-cookie": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/dom-parser": "^0.1.0",
+    "@types/jest": "^26.0.0",
+    "@types/tough-cookie": "^4.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^3.1.0",
+    "eslint": "^7.1.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "lint-staged": "^10.2.7",
+    "nock": "^12.0.3",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.1.0",
+    "typedoc": "^0.17.7",
+    "typescript": "^3.9.3"
+  }
 }
