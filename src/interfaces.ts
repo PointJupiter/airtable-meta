@@ -95,10 +95,13 @@ export type SelectColumn = BaseColumn & {
   type: ColumnType.Select | ColumnType.MultipleSelect
   typeOptions: {
     choices: {
-      id: string
-      name: string
-      color: string
-    }[]
+      [key: string]: {
+        id: string
+        name: string
+        color: string
+      }
+    }
+    choiceOrder: string[]
     disableColors: boolean
   }
 }
