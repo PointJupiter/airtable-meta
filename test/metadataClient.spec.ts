@@ -3,7 +3,7 @@ import * as mock from './mock'
 import { AirtableMetaClient } from '../src/metadataClient'
 
 const csrf = 'testcsrftoken'
-const baseId = 'appa4Jy2VNe3Qx3Kt'
+const baseId = 'appdEZLWBaSkQO86T'
 const creds = {
   email: 'test@example.com',
   password: 'tester',
@@ -80,35 +80,35 @@ describe('metadata client', () => {
   describe('getBase', () => {
     const baseData = expect.objectContaining({
       id: baseId,
-      name: 'IOM Content Engine',
-      icon: 'bolt',
-      color: 'gray',
+      name: 'Demo Base',
+      icon: null,
+      color: 'cyan',
       tables: expect.arrayContaining([
         expect.objectContaining({
-          id: 'tblGhU7I1GJgup4c9',
-          name: 'Daily content',
+          id: 'tblQS6zY0FPbiIUkD',
+          name: 'All types',
           defaultView: {
-            id: 'viw9KbcPV3xr4jALL',
-            name: 'Raw'
+            id: 'viwecZnVNYbGgVQh0',
+            name: 'Grid view'
           },
           isEmptyDueToFilter: false,
-          primaryColumnName: 'Story idea',
+          primaryColumnName: 'Single line text - Primary Field',
           columns: expect.arrayContaining([
             {
-              id: 'fldf9s0QsrSprtSYo',
-              name: 'Story idea',
+              id: 'fld4OfvUakyJBVmqT',
+              name: 'Single line text - Primary Field',
               type: 'text',
               typeOptions: null
             },
             {
-              id: 'fldGCv4GBAV5VCLco',
-              name: 'Source URL',
+              id: 'flde9EyTSyQ0eKoQC',
+              name: 'URL',
               type: 'text',
               typeOptions: { validatorName: 'url' }
             },
             {
-              id: 'fld0XRolE1DLLe0Zm',
-              name: 'Description',
+              id: 'fldf3dzyeA6jC5kQe',
+              name: 'Long text',
               type: 'multilineText',
               typeOptions: null
             }

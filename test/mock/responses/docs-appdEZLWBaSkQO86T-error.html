@@ -3,9 +3,9 @@
 <html ng-csp="no-unsafe-eval">
     <head>
         <meta charSet="utf-8"/><meta name="theme-color" content="#ffffff"/>
-        <title>Airtable API - IOM Content Engine</title>
+        <title>Airtable API - Demo Base</title>
 
-        <link nonce="wcnxUDxnyNMr" rel="stylesheet" type="text/css" href="/css/compiled/api/docs.css?v=0be28cf8f0485988-7" />
+        <link nonce="heDCKGRvpiUf" rel="stylesheet" type="text/css" href="/css/compiled/api/docs.css?v=5ba81126e259850b-7" />
 
         <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/baymax/apple-touch-icon.png" />
 <link rel="manifest" href="/images/favicon/baymax/manifest.json" />
@@ -14,9 +14,9 @@
 <link id="favIconCanvas" rel="icon" type="image/x-icon">
 
 
-        <script nonce="wcnxUDxnyNMr">
+        <script nonce="heDCKGRvpiUf">
             var _rollbarConfig = (function() {
-                
+
         var regularExpressionsToFilterRollbarStackTraces = [/adroll\.com/,/intercomcdn\.com/,/intercom\.io/,/cdn\.segment\.com/];
         var rollbarCheckIgnoreFunctionToFilterUnwantedClientSideExceptions = function rollbarCheckIgnoreFunctionToFilterUnwantedClientSideExceptions(
 isUncaught,
@@ -98,9 +98,9 @@ payload)
     }
   }
 };
-    
 
-                var rollbarConfig = {"rollbarJsUrl":"https:\u002F\u002Fcdnjs.cloudflare.com\u002Fajax\u002Flibs\u002Frollbar.js\u002F1.9.0\u002Frollbar.nojson.min.js","accessToken":"5a2d5967127341068ca03d066e325b6a","captureUncaught":true,"captureUnhandledRejections":false,"uncaughtErrorLevel":"error","maxItems":1000,"itemsPerMinute":60,"payload":{"environment":"production","person":{"id":"usrRs7emBiSTaBf1q"},"client":{"javascript":{"source_map_enabled":true,"code_version":"0be28cf8f0485988dc4f3e30992e747fbb145d9e","guess_uncaught_frames":true}}}};
+
+                var rollbarConfig = {"rollbarJsUrl":"https:\u002F\u002Fcdnjs.cloudflare.com\u002Fajax\u002Flibs\u002Frollbar.js\u002F1.9.0\u002Frollbar.nojson.min.js","accessToken":"5a2d5967127341068ca03d066e325b6a","captureUncaught":true,"captureUnhandledRejections":false,"uncaughtErrorLevel":"error","maxItems":1000,"itemsPerMinute":60,"payload":{"environment":"production","person":{"id":"usrRs7emBiSTaBf1q"},"client":{"javascript":{"source_map_enabled":true,"code_version":"5ba81126e259850ba8cc5000b83a915e6df592d2","guess_uncaught_frames":true}}}};
                 rollbarConfig.checkIgnore = rollbarCheckIgnoreFunctionToFilterUnwantedClientSideExceptions;
                 rollbarConfig.transform = rollbarTransformFunctionToRemoveSensitiveDataFromReportedClientSideExceptions;
                 return rollbarConfig;
@@ -108,25 +108,24 @@ payload)
 
             !function(r){function e(t){if(o[t])return o[t].exports;var n=o[t]={exports:{},id:t,loaded:!1};return r[t].call(n.exports,n,n.exports,e),n.loaded=!0,n.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var t=o(1).Rollbar,n=o(2);_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://d37gvrvc0wt4s1.cloudfront.net/js/v1.9/rollbar.min.js";var a=t.init(window,_rollbarConfig),i=n(a,_rollbarConfig);a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,i)},function(r,e){"use strict";function o(r){return function(){try{return r.apply(this,arguments)}catch(e){try{console.error("[Rollbar]: Internal error",e)}catch(o){}}}}function t(r,e,o){window._rollbarWrappedError&&(o[4]||(o[4]=window._rollbarWrappedError),o[5]||(o[5]=window._rollbarWrappedError._rollbarContext),window._rollbarWrappedError=null),r.uncaughtError.apply(r,o),e&&e.apply(window,o)}function n(r){var e=function(){var e=Array.prototype.slice.call(arguments,0);t(r,r._rollbarOldOnError,e)};return e.belongsToShim=!0,e}function a(r){this.shimId=++c,this.notifier=null,this.parentShim=r,this._rollbarOldOnError=null}function i(r){var e=a;return o(function(){if(this.notifier)return this.notifier[r].apply(this.notifier,arguments);var o=this,t="scope"===r;t&&(o=new e(this));var n=Array.prototype.slice.call(arguments,0),a={shim:o,method:r,args:n,ts:new Date};return window._rollbarShimQueue.push(a),t?o:void 0})}function l(r,e){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){var o=e.addEventListener;e.addEventListener=function(e,t,n){o.call(this,e,r.wrap(t),n)};var t=e.removeEventListener;e.removeEventListener=function(r,e,o){t.call(this,r,e&&e._wrapped?e._wrapped:e,o)}}}var c=0;a.init=function(r,e){var t=e.globalAlias||"Rollbar";if("object"==typeof r[t])return r[t];r._rollbarShimQueue=[],r._rollbarWrappedError=null,e=e||{};var i=new a;return o(function(){if(i.configure(e),e.captureUncaught){i._rollbarOldOnError=r.onerror,r.onerror=n(i);var o,a,c="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(o=0;o<c.length;++o)a=c[o],r[a]&&r[a].prototype&&l(i,r[a].prototype)}return e.captureUnhandledRejections&&(i._unhandledRejectionHandler=function(r){var e=r.reason,o=r.promise,t=r.detail;!e&&t&&(e=t.reason,o=t.promise),i.unhandledRejection(e,o)},r.addEventListener("unhandledrejection",i._unhandledRejectionHandler)),r[t]=i,i})()},a.prototype.loadFull=function(r,e,t,n,a){var i=function(){var e;if(void 0===r._rollbarPayloadQueue){var o,t,n,i;for(e=new Error("rollbar.js did not load");o=r._rollbarShimQueue.shift();)for(n=o.args,i=0;i<n.length;++i)if(t=n[i],"function"==typeof t){t(e);break}}"function"==typeof a&&a(e)},l=!1,
                 c=e.createElement("script"),d=e.getElementsByTagName("script")[0],p=d.parentNode;
-                c.nonce='wcnxUDxnyNMr',c.crossOrigin="",c.src=n.rollbarJsUrl,c.async=!t,
+                c.nonce='heDCKGRvpiUf',c.crossOrigin="",c.src=n.rollbarJsUrl,c.async=!t,
                 c.onload=c.onreadystatechange=o(function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){c.onload=c.onreadystatechange=null;try{p.removeChild(c)}catch(r){}l=!0,i()}}),p.insertBefore(c,d)},a.prototype.wrap=function(r,e){try{var o;if(o="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._wrapped){r._wrapped=function(){try{return r.apply(this,arguments)}catch(e){throw e._rollbarContext=o()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e,e}},r._wrapped._isWrap=!0;for(var t in r)r.hasOwnProperty(t)&&(r._wrapped[t]=r[t])}return r._wrapped}catch(n){return r}};for(var d="log,debug,info,warn,warning,error,critical,global,configure,scope,uncaughtError,unhandledRejection".split(","),p=0;p<d.length;++p)a.prototype[d[p]]=i(d[p]);r.exports={Rollbar:a,_rollbarWindowOnError:t}},function(r,e){"use strict";r.exports=function(r,e){return function(o){if(!o&&!window._rollbarInitialized){var t=window.RollbarNotifier,n=e||{},a=n.globalAlias||"Rollbar",i=window.Rollbar.init(n,r);i._processShimQueue(window._rollbarShimQueue||[]),window[a]=i,window._rollbarInitialized=!0,t.processPayloads()}}}}]);
         </script>
 
 
-        <script nonce="wcnxUDxnyNMr">
-            window.application = {"id":"appa4Jy2VNe3Qx3Kt","name":"IOM Content Engine","tables":[{"id":"tblGhU7I1GJgup4c9","name":"Daily content","columns":[{"id":"fldf9s0QsrSprtSYo","name":"Story idea","type":"text","typeOptions":null},{"id":"fldGCv4GBAV5VCLco","name":"Source URL","type":"text","typeOptions":{"validatorName":"url"}},{"id":"fld0XRolE1DLLe0Zm","name":"Description","type":"multilineText","typeOptions":null},{"id":"fldaErnWe0L9ZDd1W","name":"Article status","type":"select","typeOptions":{"choiceOrder":["selqksuOhvaTIl9yY","selNEMsZl4iVyIpvr","selhtgJhGadaVRmsa","selW74RXsSj9j7tnk","selaml2BY5smRVipw","selqwlJhGoi9zXgny","selhwgCnIgInBTaZa","selqVYCWrrGFyY42B","selwX3worFGyuRz5A","sel17VdnQzMR7nKq9","selWfrlciFrrdUlIy"],"choices":{"selWfrlciFrrdUlIy":{"id":"selWfrlciFrrdUlIy","color":"greenDarker","name":"Published"},"selNEMsZl4iVyIpvr":{"id":"selNEMsZl4iVyIpvr","color":"gray","name":"Spiked"},"selqwlJhGoi9zXgny":{"id":"selqwlJhGoi9zXgny","color":"yellow","name":"Article draft in progress"},"selhwgCnIgInBTaZa":{"id":"selhwgCnIgInBTaZa","color":"yellow","name":"Article draft review"},"selqksuOhvaTIl9yY":{"id":"selqksuOhvaTIl9yY","color":"blueDark","name":"Article idea"},"selhtgJhGadaVRmsa":{"id":"selhtgJhGadaVRmsa","color":"yellow","name":"Ready for brief"},"selaml2BY5smRVipw":{"id":"selaml2BY5smRVipw","color":"yellow","name":"Brief complete"},"selwX3worFGyuRz5A":{"id":"selwX3worFGyuRz5A","color":"green","name":"Ready for production"},"selqVYCWrrGFyY42B":{"id":"selqVYCWrrGFyY42B","color":"blue","name":"Article repost awaiting contract"},"selW74RXsSj9j7tnk":{"id":"selW74RXsSj9j7tnk","color":"yellow","name":"Brief in progress"},"sel17VdnQzMR7nKq9":{"id":"sel17VdnQzMR7nKq9","color":"greenMedium","name":"Ready for publishing"}},"disableColors":false}},{"id":"fldgbl6iyR0Z61LOd","name":"Brief","type":"text","typeOptions":{"validatorName":"url"}},{"id":"fldRBft5v3qzkKjAn","name":"Created time","type":"formula","typeOptions":{"isDateTime":true,"dateFormat":"Local","displayType":"createdTime","timeZone":"client","timeFormat":"24hour","formulaTextParsed":"CREATED_TIME()","dependencies":{"referencedColumnIdsForValue":[]},"resultType":"date"}},{"id":"fldPq2lie8TzXPhsK","name":"Topic focus","type":"multiSelect","typeOptions":{"choiceOrder":["selHgUbNwJmNEwVbm","selZStzdk1mFLoH2w","selk1umpTxGn4uSqT"],"choices":{"selHgUbNwJmNEwVbm":{"id":"selHgUbNwJmNEwVbm","color":"greenDark","name":"Topic #1"},"selZStzdk1mFLoH2w":{"id":"selZStzdk1mFLoH2w","color":"orangeDark","name":"Topic #2"},"selk1umpTxGn4uSqT":{"id":"selk1umpTxGn4uSqT","color":"purpleDark","name":"Topic #3"}},"disableColors":false}},{"id":"fldtuQEetsPbHcTeG","name":"Notes","type":"multilineText","typeOptions":null},{"id":"fldTdzt7zGYn7oKt3","name":"New article","type":"text","typeOptions":{"validatorName":"url"}},{"id":"fldAQAoJYw3aEhwbr","name":"Assigned","type":"select","typeOptions":{"choiceOrder":["selKtszGmLSuAjjUx","seliozhgszoTzEHhF","seliJPdj7vHVdjpx2","selbJFzkoRf769niP"],"choices":{"selKtszGmLSuAjjUx":{"id":"selKtszGmLSuAjjUx","name":"Chris","color":"blue"},"seliozhgszoTzEHhF":{"id":"seliozhgszoTzEHhF","color":"cyan","name":"Mike"},"seliJPdj7vHVdjpx2":{"id":"seliJPdj7vHVdjpx2","color":"teal","name":"James"},"selbJFzkoRf769niP":{"id":"selbJFzkoRf769niP","color":"green","name":"Gabi"}},"disableColors":false}},{"id":"fldV5B0bbKTyelPM6","name":"Writer","type":"foreignKey","typeOptions":{"foreignTableId":"tblyLfp2kSTZg2mEa","relationship":"one","symmetricColumnId":"fldVBKXOeD742dggw"}},{"id":"fldmgNNIdkw7h8ydw","name":"Slug","type":"formula","typeOptions":{"formulaTextParsed":"SUBSTITUTE({column_value_fldf9s0QsrSprtSYo}, \" \", \"-\")","dependencies":{"referencedColumnIdsForValue":["fldf9s0QsrSprtSYo"]},"resultType":"text"}},{"id":"fldjFB7hjVPZYBW6r","name":"ID","type":"formula","typeOptions":{"formulaTextParsed":"RECORD_ID()","dependencies":{"referencedColumnIdsForValue":[]},"resultType":"text"}},{"id":"fldYUSQtQuvREsfV9","name":"Published URL","type":"text","typeOptions":{"validatorName":"url"}},{"id":"fldl2vNQ63jYbSVNW","name":"Content partner url","type":"formula","typeOptions":{"formulaTextParsed":"MID(column_value_fldGCv4GBAV5VCLco, \n    FIND(\"\u002F\u002F\", column_value_fldGCv4GBAV5VCLco) + 2, \n    FIND(\"\u002F\", \n         column_value_fldGCv4GBAV5VCLco, \n         FIND(\"\u002F\u002F\", column_value_fldGCv4GBAV5VCLco) + 2\n        ) - (FIND(\"\u002F\u002F\", column_value_fldGCv4GBAV5VCLco) + 2)\n   )","dependencies":{"referencedColumnIdsForValue":["fldGCv4GBAV5VCLco"]},"resultType":"text"}},{"id":"fldJz8eTyx9bnRYBx","name":"Publish date\u002Ftime","type":"date","typeOptions":{"isDateTime":true,"dateFormat":"Local","timeFormat":"24hour","timeZone":"UTC"}},{"id":"fldyAD6ZSzhA8pgOt","name":"Video - status","type":"select","typeOptions":{"choiceOrder":["selxgbzTcAZCnYdg9","selM1tJeS1H57B030","sel3jYebrkc6Nc2Ky","selxJ43adyT4pf0Wk","selaSBuRlvEqoc9yo","sel3CjSVbfZHelrMR","selvHksRUeRuDJRbN"],"choices":{"selxgbzTcAZCnYdg9":{"id":"selxgbzTcAZCnYdg9","color":"blueDark","name":"Video idea"},"selM1tJeS1H57B030":{"id":"selM1tJeS1H57B030","color":"gray","name":"Spiked"},"sel3jYebrkc6Nc2Ky":{"id":"sel3jYebrkc6Nc2Ky","color":"teal","name":"Script in progress"},"selxJ43adyT4pf0Wk":{"id":"selxJ43adyT4pf0Wk","color":"green","name":"Script approved"},"selaSBuRlvEqoc9yo":{"id":"selaSBuRlvEqoc9yo","color":"yellow","name":"Video in progress"},"sel3CjSVbfZHelrMR":{"id":"sel3CjSVbfZHelrMR","color":"orange","name":"Video approved"},"selvHksRUeRuDJRbN":{"id":"selvHksRUeRuDJRbN","color":"greenDarker","name":"Published"}},"disableColors":false}},{"id":"fldgOoLWIExE08mGI","name":"Video script","type":"text","typeOptions":{"validatorName":"url"}},{"id":"fldlEN1VBfmRvaP0x","name":"Influencers","type":"text","typeOptions":null},{"id":"fldydZxBFlqrlK64i","name":"Shareable suggestion","type":"multipleAttachment","typeOptions":null},{"id":"fldFoFRHJYZls9wau","name":"Last updated","type":"formula","typeOptions":{"isDateTime":true,"dateFormat":"Local","displayType":"lastModifiedTime","timeZone":"client","formulaTextParsed":"LAST_MODIFIED_TIME()","dependencies":{"referencedColumnIdsForValue":[],"dependsOnAllColumnModifications":true},"resultType":"date"}},{"id":"fldgeYX4mmk7ONP1t","name":"Active in social queue","type":"select","typeOptions":{"choiceOrder":["selvlrDiBdCqMOWGA","selwX1NE5fOiDhi2i"],"choices":{"selvlrDiBdCqMOWGA":{"id":"selvlrDiBdCqMOWGA","color":"redDark","name":"No"},"selwX1NE5fOiDhi2i":{"id":"selwX1NE5fOiDhi2i","color":"green","name":"Yes"}},"disableColors":false}},{"id":"fldu8A0ciJh5vU2eU","name":"Social promos","type":"foreignKey","typeOptions":{"relationship":"many","foreignTableId":"tblZl4EVqbqy4fPdt","symmetricColumnId":"fldAZyyL4UXVF2KEK","viewIdForRecordSelection":"viwA13doo3hVqcWbF"}},{"id":"fldWjTRSJrX2MOOcx","name":"Twitter social virality","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fldgeYX4mmk7ONP1t}!=\"No\", IF(({column_value_fldAXnsRV5aEX0EGw}\u002F7)*({column_value_fldMRw50pjgp0D6Ov}\u002F{column_value_fld8rNnn2LWaG5RKc})\u003E-1000,({column_value_fldAXnsRV5aEX0EGw}\u002F2)*({column_value_fldMRw50pjgp0D6Ov}\u002F{column_value_fld8rNnn2LWaG5RKc}),100),-100)","dependencies":{"referencedColumnIdsForValue":["fldgeYX4mmk7ONP1t","fldAXnsRV5aEX0EGw","fldMRw50pjgp0D6Ov","fld8rNnn2LWaG5RKc"]},"resultType":"number"}},{"id":"fldpUcFXMjfy2O9vs","name":"Latest Twitter social promo","type":"rollup","typeOptions":{"relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fldbK0BqqMKWS34Dw","formulaTextParsed":"MAX(values)","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fldbK0BqqMKWS34Dw"]},"resultType":"date"}},{"id":"fldAXnsRV5aEX0EGw","name":"Days since last Twitter promotion","type":"formula","typeOptions":{"formulaTextParsed":"DATETIME_DIFF(TODAY(),{column_value_fldpUcFXMjfy2O9vs},'days')+1","dependencies":{"referencedColumnIdsForValue":["fldpUcFXMjfy2O9vs"],"dependsOnCurrentTime":true,"dependsOnCurrentTimeButOnlyOnToday":true},"resultType":"number"}},{"id":"fldnBjMxLJk0R8IHi","name":"Number of Twitter social promos","type":"rollup","typeOptions":{"relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fldRa5HrpsbVcVDJB","formulaTextParsed":"COUNTALL(values)","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fldRa5HrpsbVcVDJB"]},"resultType":"number"}},{"id":"fldMRw50pjgp0D6Ov","name":"Total Twitter social performance","type":"rollup","typeOptions":{"relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fldRohhEtsblap7Iz","formulaTextParsed":"SUM(values)","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fldRohhEtsblap7Iz"]},"resultType":"number"}},{"id":"fldwxYPFiJBaKIWWw","name":"Twitter social posts dates","type":"lookup","typeOptions":{"dateFormat":"Local","isDateTime":false,"timeZone":"UTC","relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fldRa5HrpsbVcVDJB","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fldRa5HrpsbVcVDJB"]},"resultType":"foreignKey"}},{"id":"fld8rNnn2LWaG5RKc","name":"Number of tweets","type":"rollup","typeOptions":{"relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fldXLqLu2tuaEaBI9","formulaTextParsed":"SUM(values)","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fldXLqLu2tuaEaBI9"]},"resultType":"number"}},{"id":"fld7GZ0ortVVkZOQM","name":"Last modified","type":"formula","typeOptions":{"isDateTime":true,"dateFormat":"Local","displayType":"lastModifiedTime","timeZone":"client","formulaTextParsed":"LAST_MODIFIED_TIME()","dependencies":{"referencedColumnIdsForValue":[],"dependsOnAllColumnModifications":true},"resultType":"date"}},{"id":"fldjgBTgetvBzdnNa","name":"Combined status","type":"formula","typeOptions":{"formulaTextParsed":"column_value_fldaErnWe0L9ZDd1W&{column_value_fldyAD6ZSzhA8pgOt}","dependencies":{"referencedColumnIdsForValue":["fldaErnWe0L9ZDd1W","fldyAD6ZSzhA8pgOt"]},"resultType":"text"}},{"id":"fldI0GNvjBLauO0mb","name":"article decision updated","type":"formula","typeOptions":{"dateFormat":"Local","isDateTime":false,"timeZone":"client","displayType":"lastModifiedTime","formulaTextParsed":"LAST_MODIFIED_TIME(column_modified_time_fldaErnWe0L9ZDd1W)","dependencies":{"referencedColumnIdsForValue":[],"referencedColumnIdsForModification":["fldaErnWe0L9ZDd1W"]},"resultType":"date"}},{"id":"fldvC6sAS7FwpiG2h","name":"Shortlink Twitter","type":"text","typeOptions":{"validatorName":"url"}},{"id":"fldChPAOUVFtmymQM","name":"video decision updated","type":"formula","typeOptions":{"dateFormat":"Local","isDateTime":false,"timeZone":"client","displayType":"lastModifiedTime","formulaTextParsed":"LAST_MODIFIED_TIME({column_modified_time_fldyAD6ZSzhA8pgOt})","dependencies":{"referencedColumnIdsForValue":[],"referencedColumnIdsForModification":["fldyAD6ZSzhA8pgOt"]},"resultType":"date"}},{"id":"fldpaMmK9XQuDxdDY","name":"Commissioned","type":"select","typeOptions":{"choiceOrder":["selVwhmdWYHKWztVm","selZkPMvfTDQWgCQG","selCdNPT1EqWByst8","selffhh3kAnVMFgmk"],"choices":{"selVwhmdWYHKWztVm":{"id":"selVwhmdWYHKWztVm","color":"greenDark","name":"Commissioned"},"selZkPMvfTDQWgCQG":{"id":"selZkPMvfTDQWgCQG","color":"orange","name":"Spiked"},"selCdNPT1EqWByst8":{"id":"selCdNPT1EqWByst8","color":"yellowDark","name":"Pending"},"selffhh3kAnVMFgmk":{"id":"selffhh3kAnVMFgmk","color":"purpleDark","name":"Social only"}},"disableColors":false}},{"id":"fldGus4sOIagKtJRp","name":"Commissioned date","type":"formula","typeOptions":{"isDateTime":false,"dateFormat":"Local","displayType":"lastModifiedTime","timeZone":"client","formulaTextParsed":"LAST_MODIFIED_TIME(column_modified_time_fldpaMmK9XQuDxdDY)","dependencies":{"referencedColumnIdsForValue":[],"referencedColumnIdsForModification":["fldpaMmK9XQuDxdDY"]},"resultType":"date"}},{"id":"fldLjrexC590lFWsh","name":"Social shareable","type":"multipleAttachment","typeOptions":null},{"id":"fldB8AueBVnYkdCLt","name":"Linkedin social posts dates","type":"lookup","typeOptions":{"dateFormat":"Local","isDateTime":false,"timeZone":"UTC","relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fld9Zcd4TwSULsH24","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fld9Zcd4TwSULsH24"]},"resultType":"date"}},{"id":"fldxEZJkXBG8M4yMP","name":"Facebook social posts dates","type":"lookup","typeOptions":{"dateFormat":"Local","isDateTime":false,"timeZone":"UTC","relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fldjSy4GFEFbtRp30","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fldjSy4GFEFbtRp30"]},"resultType":"date"}},{"id":"fld7DqKm65EzZSUaJ","name":"Total Linkedin social performance","type":"rollup","typeOptions":{"relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fldj0P6iG5vUHl23Y","formulaTextParsed":"SUM(values)","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fldj0P6iG5vUHl23Y"]},"resultType":"number"}},{"id":"fldJCqv1L1cMYvBr6","name":"Total Facebook social performance","type":"rollup","typeOptions":{"relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fldYy8TMhhj8U6cl1","formulaTextParsed":"SUM(values)","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fldYy8TMhhj8U6cl1"]},"resultType":"number"}},{"id":"fld7yuC7lwVBGf2GG","name":"Number of Linkedin social promos","type":"rollup","typeOptions":{"relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fldNL2ssRoQGGSY4N","formulaTextParsed":"SUM(values)","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fldNL2ssRoQGGSY4N"]},"resultType":"number"}},{"id":"fldhBPOsDVHYCSETW","name":"Number of Facebook social promos","type":"rollup","typeOptions":{"relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fldYy8TMhhj8U6cl1","formulaTextParsed":"COUNTALL(values)","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fldYy8TMhhj8U6cl1"]},"resultType":"number"}},{"id":"fld4mS8dlxSYwx9sd","name":"Days since last Linkedin promotion","type":"formula","typeOptions":{"formulaTextParsed":"DATETIME_DIFF(TODAY(),{column_value_fldXXoRHQ2BkbKPej},'days')+1","dependencies":{"referencedColumnIdsForValue":["fldXXoRHQ2BkbKPej"],"dependsOnCurrentTime":true,"dependsOnCurrentTimeButOnlyOnToday":true},"resultType":"number"}},{"id":"fld7Wp0XVjdmgIDam","name":"Days since last Facebook promotion","type":"formula","typeOptions":{"formulaTextParsed":"DATETIME_DIFF(TODAY(),{column_value_fldcZf9Zzt7AS0lqo},'days')+1","dependencies":{"referencedColumnIdsForValue":["fldcZf9Zzt7AS0lqo"],"dependsOnCurrentTime":true,"dependsOnCurrentTimeButOnlyOnToday":true},"resultType":"number"}},{"id":"fldXXoRHQ2BkbKPej","name":"Latest Linkedin social promo","type":"rollup","typeOptions":{"relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fld9Zcd4TwSULsH24","formulaTextParsed":"MAX(values)","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fld9Zcd4TwSULsH24"]},"resultType":"date"}},{"id":"fldcZf9Zzt7AS0lqo","name":"Latest Facebook social promo","type":"rollup","typeOptions":{"relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fldjSy4GFEFbtRp30","formulaTextParsed":"MAX(values)","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fldjSy4GFEFbtRp30"]},"resultType":"date"}},{"id":"fldZ1L6cO4DuHjqOZ","name":"Number of Linkedin posts","type":"rollup","typeOptions":{"relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fldNL2ssRoQGGSY4N","formulaTextParsed":"SUM(values)","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fldNL2ssRoQGGSY4N"]},"resultType":"number"}},{"id":"fld4vSPVspoFJwQjs","name":"Number of Facebook posts","type":"rollup","typeOptions":{"relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fldO5zTUjujRd2wVs","formulaTextParsed":"SUM(values)","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fldO5zTUjujRd2wVs"]},"resultType":"number"}},{"id":"fld7QYdPhMzJJTPuz","name":"Linkedin social virality","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fldgeYX4mmk7ONP1t}!=\"No\",IF(({column_value_fld4mS8dlxSYwx9sd}\u002F15)*({column_value_fld7DqKm65EzZSUaJ}\u002F{column_value_fldZ1L6cO4DuHjqOZ})\u003E-1000,({column_value_fld4mS8dlxSYwx9sd}\u002F2)*({column_value_fld7DqKm65EzZSUaJ}\u002F{column_value_fldZ1L6cO4DuHjqOZ}),100),-100)","dependencies":{"referencedColumnIdsForValue":["fldgeYX4mmk7ONP1t","fld4mS8dlxSYwx9sd","fld7DqKm65EzZSUaJ","fldZ1L6cO4DuHjqOZ"]},"resultType":"number"}},{"id":"fldl7H0rI63gP2usZ","name":"Facebook social virality","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fldgeYX4mmk7ONP1t}!=\"No\",IF(({column_value_fld7Wp0XVjdmgIDam}\u002F15)*({column_value_fldJCqv1L1cMYvBr6}\u002F{column_value_fld4vSPVspoFJwQjs})\u003E-1000,({column_value_fld7Wp0XVjdmgIDam}\u002F2)*({column_value_fldJCqv1L1cMYvBr6}\u002F{column_value_fld4vSPVspoFJwQjs}),100),-100)","dependencies":{"referencedColumnIdsForValue":["fldgeYX4mmk7ONP1t","fld7Wp0XVjdmgIDam","fldJCqv1L1cMYvBr6","fld4vSPVspoFJwQjs"]},"resultType":"number"}},{"id":"fldXTv96LzdzaX469","name":"INV#","type":"text","typeOptions":null},{"id":"fldGRB6pH4fKeTxFa","name":"writer TCE rollup","type":"rollup","typeOptions":{"relationColumnId":"fldV5B0bbKTyelPM6","foreignTableRollupColumnId":"fldmTtzwXI9F7wn96","formulaTextParsed":"ARRAYUNIQUE(values)","dependencies":{"referencedColumnIdsForValue":["fldV5B0bbKTyelPM6","fldmTtzwXI9F7wn96"]},"resultType":"text"}},{"id":"fldLJ3nmX7JKmI4rT","name":"writer email rollup","type":"rollup","typeOptions":{"relationColumnId":"fldV5B0bbKTyelPM6","foreignTableRollupColumnId":"fldsl0JxiKP23XQW2","formulaTextParsed":"ARRAYUNIQUE(values)","dependencies":{"referencedColumnIdsForValue":["fldV5B0bbKTyelPM6","fldsl0JxiKP23XQW2"]},"resultType":"text"}},{"id":"fldIT8ae7AwaDAIJa","name":"writer rollup","type":"rollup","typeOptions":{"relationColumnId":"fldV5B0bbKTyelPM6","foreignTableRollupColumnId":"fldArkCN5pL3gm7nM","formulaTextParsed":"ARRAYUNIQUE(values)","dependencies":{"referencedColumnIdsForValue":["fldV5B0bbKTyelPM6","fldArkCN5pL3gm7nM"]},"resultType":"text"}},{"id":"fldQ6jcYVyLpg6TDu","name":"Shareable folder","type":"text","typeOptions":{"validatorName":"url"}},{"id":"fldzxtwzqbIJvDnDY","name":"Shortlink Facebook","type":"text","typeOptions":{"validatorName":"url"}},{"id":"fldzEmoyuGTgfmNsf","name":"Shortlink Linkedin","type":"text","typeOptions":{"validatorName":"url"}},{"id":"fldsGCdVE6ExY91P1","name":"update","type":"text","typeOptions":null},{"id":"fldikuMh3Le6RABL0","name":"Brief commissioned notification","type":"checkbox","typeOptions":{"color":"blue","icon":"flag"}},{"id":"fld5hWOFDZbuZPOwG","name":"Article commissioned notification","type":"checkbox","typeOptions":{"color":"blue","icon":"flag"}},{"id":"fldaY0O6GsTtyNaZN","name":"Brief complete notification TCE","type":"checkbox","typeOptions":{"color":"blue","icon":"flag"}},{"id":"fldtvqAQu6yw3zyiW","name":"Article updated notification TCE","type":"checkbox","typeOptions":{"color":"blue","icon":"flag"}},{"id":"fldnfEH41Gq8UnkqK","name":"Article needs updating notification","type":"checkbox","typeOptions":{"color":"blue","icon":"flag"}},{"id":"fldlLWKJyJs47BNXE","name":"Video script commissioned notification","type":"checkbox","typeOptions":{"color":"blue","icon":"flag"}},{"id":"fldwKxTBJEHVlzT7A","name":"Video script ready for TCE review","type":"checkbox","typeOptions":{"color":"blue","icon":"flag"}},{"id":"fldCfN9Gt1SoDMgE1","name":"Article status updated","type":"formula","typeOptions":{"isDateTime":true,"dateFormat":"Local","displayType":"lastModifiedTime","timeZone":"client","formulaTextParsed":"LAST_MODIFIED_TIME({column_modified_time_fldaErnWe0L9ZDd1W})","dependencies":{"referencedColumnIdsForValue":[],"referencedColumnIdsForModification":["fldaErnWe0L9ZDd1W"]},"resultType":"date"}},{"id":"fldsj8f09cAsEmr90","name":"Video status updated","type":"formula","typeOptions":{"isDateTime":true,"dateFormat":"Local","displayType":"lastModifiedTime","timeZone":"client","formulaTextParsed":"LAST_MODIFIED_TIME({column_modified_time_fldyAD6ZSzhA8pgOt})","dependencies":{"referencedColumnIdsForValue":[],"referencedColumnIdsForModification":["fldyAD6ZSzhA8pgOt"]},"resultType":"date"}},{"id":"fldcxnFJpJJ5R5bIE","name":"Final video mp4","type":"text","typeOptions":{"validatorName":"url"}},{"id":"fldDbWTh5d5TSaxJ3","name":"Article client sign off notification","type":"checkbox","typeOptions":{"color":"blue","icon":"flag"}},{"id":"fldvQY52VOGPqLXpT","name":"Video producer","type":"foreignKey","typeOptions":{"foreignTableId":"tblyLfp2kSTZg2mEa","relationship":"many","symmetricColumnId":"fldVtmY1rngE0PQiS"}},{"id":"fldu9kdNlGsqIlgBz","name":"Social status","type":"lookup","typeOptions":{"relationColumnId":"fldu8A0ciJh5vU2eU","foreignTableRollupColumnId":"fldDyKLr7BaxoLNn4","dependencies":{"referencedColumnIdsForValue":["fldu8A0ciJh5vU2eU","fldDyKLr7BaxoLNn4"]},"resultType":"text"}},{"id":"fld62qOi2tTast3ho","name":"IOM Submitter","type":"text","typeOptions":null},{"id":"fldoCw17b0kUD4jMc","name":"IOM Submitter email","type":"text","typeOptions":{"validatorName":"email"}},{"id":"fld4AmI5WgtvvzFLF","name":"IOM Submitter position","type":"text","typeOptions":null},{"id":"fldofCdhBfktWEztr","name":"IOM Content type","type":"select","typeOptions":{"choiceOrder":["selttqviPHNnl3H3O","seloVRpIRt5L8uurE","selXtV4EsuCjFnO8L","selwbo8ugZxbODkBg","sel6VLJQMSsPlbnqJ"],"choices":{"selttqviPHNnl3H3O":{"id":"selttqviPHNnl3H3O","color":"blue","name":"Press note"},"seloVRpIRt5L8uurE":{"id":"seloVRpIRt5L8uurE","color":"cyan","name":"Feature article"},"selXtV4EsuCjFnO8L":{"id":"selXtV4EsuCjFnO8L","color":"teal","name":"Video"},"selwbo8ugZxbODkBg":{"id":"selwbo8ugZxbODkBg","color":"green","name":"Issue brief"},"sel6VLJQMSsPlbnqJ":{"id":"sel6VLJQMSsPlbnqJ","color":"yellow","name":"Internal publication"}},"disableColors":false}},{"id":"fldUsjw5NDrjhYKFe","name":"IOM Region","type":"select","typeOptions":{"choiceOrder":["sel8iff92QGPdMsa1","selcoYa2vO9RnnlMW","selvGJedLB2xadPWx","seljXNbMcOHhzODqa","seldRRH58pp7OElHZ","selYOxaE1xygPa29u","selqaPjjD3BrHefUx","selg1Bs3juSThC2sB","selFhuN5JqWePq3do","selsAo36vAyoHyJWx"],"choices":{"sel8iff92QGPdMsa1":{"id":"sel8iff92QGPdMsa1","color":"blue","name":"Central and West Africa"},"selcoYa2vO9RnnlMW":{"id":"selcoYa2vO9RnnlMW","color":"cyan","name":"Southern Africa"},"selvGJedLB2xadPWx":{"id":"selvGJedLB2xadPWx","color":"teal","name":"East Africa and the Horn of Africa"},"seljXNbMcOHhzODqa":{"id":"seljXNbMcOHhzODqa","color":"green","name":"Middle East and North Africa"},"seldRRH58pp7OElHZ":{"id":"seldRRH58pp7OElHZ","color":"yellow","name":"Central and North America and the Caribbean"},"selYOxaE1xygPa29u":{"id":"selYOxaE1xygPa29u","color":"orange","name":"South America"},"selqaPjjD3BrHefUx":{"id":"selqaPjjD3BrHefUx","color":"red","name":"Asia and the Pacific"},"selg1Bs3juSThC2sB":{"id":"selg1Bs3juSThC2sB","color":"pink","name":"European Economic Area"},"selFhuN5JqWePq3do":{"id":"selFhuN5JqWePq3do","color":"purple","name":"South Eastern Europe"},"selsAo36vAyoHyJWx":{"id":"selsAo36vAyoHyJWx","color":"gray","name":"Eastern Europe and Central Asia"}},"disableColors":false}},{"id":"fldLPKVU0JuWXUUwm","name":"IOM Division","type":"text","typeOptions":null},{"id":"fldAdZgyKo3P0aySV","name":"IOM Regional PIO coordinated","type":"checkbox","typeOptions":{"color":"green","icon":"check"}},{"id":"fldWuNp6xZczvQ2Oy","name":"IOM COM name","type":"text","typeOptions":null},{"id":"fldGrfYRD8SgYli2p","name":"IOM COM email","type":"text","typeOptions":{"validatorName":"email"}},{"id":"fldSceDdA8VhIuI4Y","name":"IOM COM mobile","type":"phone","typeOptions":null},{"id":"fld4srcmicxjFC9sn","name":"IOM COM approval","type":"checkbox","typeOptions":{"color":"green","icon":"check"}},{"id":"fldjPao7RiDLyxKr3","name":"IOM urgent","type":"checkbox","typeOptions":{"color":"blue","icon":"flag"}},{"id":"fldUaemRyreUNe9T9","name":"IOM Additional information contacts","type":"multilineText","typeOptions":null},{"id":"fldRvV7bnJA13Ldfn","name":"IOM Photo assets","type":"text","typeOptions":{"validatorName":"url"}},{"id":"fldzFjcfSNbzObUad","name":"IOM Video assets","type":"text","typeOptions":{"validatorName":"url"}}],"sampleRows":[{"id":"recw12nqBYwt38BWl","fields":{"Created time":"2020-04-30T07:36:45.000Z","ID":"recw12nqBYwt38BWl","Last updated":"2020-05-14T08:54:29.000Z","Twitter social virality":100,"Days since last Twitter promotion":{"specialValue":"NaN"},"Number of Twitter social promos":0,"Total Twitter social performance":0,"Number of tweets":0,"Last modified":"2020-05-14T08:54:29.000Z","Total Linkedin social performance":0,"Total Facebook social performance":0,"Number of Linkedin social promos":0,"Number of Facebook social promos":0,"Days since last Linkedin promotion":{"specialValue":"NaN"},"Days since last Facebook promotion":{"specialValue":"NaN"},"Number of Linkedin posts":0,"Number of Facebook posts":0,"Linkedin social virality":100,"Facebook social virality":100,"writer TCE rollup":[],"writer email rollup":[],"writer rollup":[]},"createdTime":"2020-04-30T07:36:45.000Z"}],"primaryColumnName":"Story idea","defaultView":{"id":"viw9KbcPV3xr4jALL","name":"Raw"},"isEmptyDueToFilter":false},{"id":"tblirxCcYzhxI9Fub","name":"Reposts","columns":[{"id":"fldabpToew2hyE8BW","name":"Content partner","type":"text","typeOptions":null},{"id":"fldbzzH15JqryWK17","name":"Link","type":"text","typeOptions":null},{"id":"fldAc2UOmU8VpZMii","name":"Permission needed?","type":"select","typeOptions":{"choiceOrder":["sel7B6GFy3PiPU88a","selx9QhwtadXrq1ft"],"choices":{"sel7B6GFy3PiPU88a":{"id":"sel7B6GFy3PiPU88a","color":"cyanMedium","name":"Yes"},"selx9QhwtadXrq1ft":{"id":"selx9QhwtadXrq1ft","color":"pinkMedium","name":"No"}},"disableColors":false}},{"id":"fldYWYu9MGHZje6yj","name":"Status","type":"select","typeOptions":{"choiceOrder":["selky1VMAW5ZrDp5I","selmlPW9TA2BjfeWL","selq28JjHQnyvyfEr","seluGXNH9GWDPnvmY","selCKDqXnVuJe2Bgp"],"choices":{"selky1VMAW5ZrDp5I":{"id":"selky1VMAW5ZrDp5I","color":"redMedium","name":"Idea"},"selmlPW9TA2BjfeWL":{"id":"selmlPW9TA2BjfeWL","color":"yellowMedium","name":"Approved"},"selq28JjHQnyvyfEr":{"id":"selq28JjHQnyvyfEr","color":"greenMedium","name":"Published"},"seluGXNH9GWDPnvmY":{"id":"seluGXNH9GWDPnvmY","color":"cyanMedium","name":"Requested permission"},"selCKDqXnVuJe2Bgp":{"id":"selCKDqXnVuJe2Bgp","color":"yellow","name":"Forget"}},"disableColors":false}}],"sampleRows":[],"primaryColumnName":"Content partner","defaultView":{"id":"viwLECjWVx8I4pAJl","name":"Grid view"},"isEmptyDueToFilter":false},{"id":"tblyLfp2kSTZg2mEa","name":"Writers","columns":[{"id":"fldArkCN5pL3gm7nM","name":"Name","type":"text","typeOptions":null},{"id":"fldsl0JxiKP23XQW2","name":"Email","type":"text","typeOptions":null},{"id":"fldLXH4MJalHwERoa","name":"Phone","type":"number","typeOptions":{"format":"integer","negative":false,"validatorName":"positive"}},{"id":"fld9c6EEVcNwVQVqR","name":"Location","type":"text","typeOptions":null},{"id":"fldHU53f1w1ekyLQu","name":"Expertise","type":"select","typeOptions":{"choiceOrder":["selkX5DLrIBOBxAJI","selYgyWGrlIWmILGC"],"choices":{"selkX5DLrIBOBxAJI":{"id":"selkX5DLrIBOBxAJI","color":"greenDark","name":"yes"},"selYgyWGrlIWmILGC":{"id":"selYgyWGrlIWmILGC","color":"purpleDark","name":"no"}},"disableColors":false}},{"id":"flddwWQ4hRn4RNwHU","name":"Notes","type":"multilineText","typeOptions":null},{"id":"fldjny7cFgLAFdvhB","name":"WriterID","type":"formula","typeOptions":{"formulaTextParsed":"RECORD_ID()","dependencies":{"referencedColumnIdsForValue":[]},"resultType":"text"}},{"id":"fldmTtzwXI9F7wn96","name":"TCE","type":"select","typeOptions":{"choiceOrder":["selwk2FTeFbyLgqFy","selaDvYOeiiGwrBCs"],"choices":{"selwk2FTeFbyLgqFy":{"id":"selwk2FTeFbyLgqFy","color":"greenDark","name":"yes"},"selaDvYOeiiGwrBCs":{"id":"selaDvYOeiiGwrBCs","color":"purpleDark","name":"no"}},"disableColors":false}},{"id":"fldVBKXOeD742dggw","name":"Articles","type":"foreignKey","typeOptions":{"foreignTableId":"tblGhU7I1GJgup4c9","symmetricColumnId":"fldV5B0bbKTyelPM6","relationship":"many"}},{"id":"fldVtmY1rngE0PQiS","name":"Videos","type":"foreignKey","typeOptions":{"foreignTableId":"tblGhU7I1GJgup4c9","symmetricColumnId":"fldvQY52VOGPqLXpT","relationship":"many"}}],"sampleRows":[],"primaryColumnName":"Name","defaultView":{"id":"viwGaAz55vAmcOLJ7","name":"Grid view"},"isEmptyDueToFilter":false},{"id":"tblBRKg4QsCvnJMOK","name":"Users","columns":[{"id":"fldyHvWIdREDIjGXO","name":"Name","type":"text","typeOptions":null},{"id":"fldNPLg5N6BoqevP9","name":"Email","type":"text","typeOptions":{"validatorName":"email"}},{"id":"fldqpr6B9dTwUyAfe","name":"Daily content","type":"text","typeOptions":null}],"sampleRows":[],"primaryColumnName":"Name","defaultView":{"id":"viw1rIT3GRMmYQm1t","name":"Grid view"},"isEmptyDueToFilter":false},{"id":"tblZl4EVqbqy4fPdt","name":"Social promos","columns":[{"id":"fldbysUR4qwhvq0vy","name":"Promo text","type":"multilineText","typeOptions":null},{"id":"fldAZyyL4UXVF2KEK","name":"Content link","type":"foreignKey","typeOptions":{"relationship":"one","foreignTableId":"tblGhU7I1GJgup4c9","symmetricColumnId":"fldu8A0ciJh5vU2eU"}},{"id":"fldRohhEtsblap7Iz","name":"Twitter performance","type":"rollup","typeOptions":{"relationColumnId":"fldRa5HrpsbVcVDJB","foreignTableRollupColumnId":"fldvdm7g8fkeKmyB6","formulaTextParsed":"SUM(values)","dependencies":{"referencedColumnIdsForValue":["fldRa5HrpsbVcVDJB","fldvdm7g8fkeKmyB6"]},"resultType":"number"}},{"id":"fldDyKLr7BaxoLNn4","name":"Status","type":"select","typeOptions":{"choiceOrder":["selNsyreiAKOpP8PC","selLm14B4MG01BT90","sel3XWxTkfzXuIJVX"],"choices":{"selNsyreiAKOpP8PC":{"id":"selNsyreiAKOpP8PC","color":"pink","name":"In progress"},"sel3XWxTkfzXuIJVX":{"id":"sel3XWxTkfzXuIJVX","color":"greenDark","name":"Approved"},"selLm14B4MG01BT90":{"id":"selLm14B4MG01BT90","color":"cyanDarker","name":"TCE approved"}},"disableColors":false}},{"id":"fldRa5HrpsbVcVDJB","name":"Social schedule","type":"foreignKey","typeOptions":{"relationship":"many","foreignTableId":"tblOndmV8cQVJlucQ","symmetricColumnId":"flddLUsuLXmTF2MN1","viewIdForRecordSelection":"viwuFzcYQLbLRCvul"}},{"id":"fldbK0BqqMKWS34Dw","name":"latest post twitter date","type":"rollup","typeOptions":{"relationColumnId":"fldRa5HrpsbVcVDJB","foreignTableRollupColumnId":"fldW1YKMqA86eFZVP","formulaTextParsed":"MAX(values)","dependencies":{"referencedColumnIdsForValue":["fldRa5HrpsbVcVDJB","fldW1YKMqA86eFZVP"]},"resultType":"date"}},{"id":"fld9aPJb4qabRfnwY","name":"url virality","type":"lookup","typeOptions":{"relationColumnId":"fldAZyyL4UXVF2KEK","foreignTableRollupColumnId":"fldWjTRSJrX2MOOcx","dependencies":{"referencedColumnIdsForValue":["fldAZyyL4UXVF2KEK","fldWjTRSJrX2MOOcx"]},"resultType":"number"}},{"id":"fldYFatUx5s1mcKdg","name":"post virality","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fldRohhEtsblap7Iz}\u003E1,\n({column_value_fldx8kwOXsyld5buw}\u002F10)*({column_value_fldRohhEtsblap7Iz}\u002F{column_value_fldXLqLu2tuaEaBI9}),\n\nIF({column_value_fldYy8TMhhj8U6cl1}\u003E1,\n({column_value_fldx8kwOXsyld5buw}\u002F10)*({column_value_fldYy8TMhhj8U6cl1}\u002F{column_value_fldO5zTUjujRd2wVs}),\n\nIF({column_value_fldj0P6iG5vUHl23Y}\u003E1,\n({column_value_fldx8kwOXsyld5buw}\u002F10)*({column_value_fldj0P6iG5vUHl23Y}\u002F{column_value_fldNL2ssRoQGGSY4N}))))","dependencies":{"referencedColumnIdsForValue":["fldRohhEtsblap7Iz","fldx8kwOXsyld5buw","fldXLqLu2tuaEaBI9","fldYy8TMhhj8U6cl1","fldO5zTUjujRd2wVs","fldj0P6iG5vUHl23Y","fldNL2ssRoQGGSY4N"]},"resultType":"number"}},{"id":"fldx8kwOXsyld5buw","name":"Days since last posted","type":"formula","typeOptions":{"format":"integer","formulaTextParsed":"IF({column_value_fldbK0BqqMKWS34Dw}, \nDATETIME_DIFF(TODAY(),{column_value_fldbK0BqqMKWS34Dw},'days'),\n\nIF({column_value_fldjSy4GFEFbtRp30},\nDATETIME_DIFF(TODAY(),{column_value_fldjSy4GFEFbtRp30},'days'),\n\nIF({column_value_fld9Zcd4TwSULsH24},\nDATETIME_DIFF(TODAY(),{column_value_fld9Zcd4TwSULsH24},'days'))))","dependencies":{"referencedColumnIdsForValue":["fldbK0BqqMKWS34Dw","fldjSy4GFEFbtRp30","fld9Zcd4TwSULsH24"],"dependsOnCurrentTime":true,"dependsOnCurrentTimeButOnlyOnToday":true},"resultType":"number"}},{"id":"fldXLqLu2tuaEaBI9","name":"Number of times posted on twitter","type":"rollup","typeOptions":{"relationColumnId":"fldRa5HrpsbVcVDJB","foreignTableRollupColumnId":"fld2DtRHabADDGuvE","formulaTextParsed":"SUM(values)","dependencies":{"referencedColumnIdsForValue":["fldRa5HrpsbVcVDJB","fld2DtRHabADDGuvE"]},"resultType":"number"}},{"id":"fldelrnW8WZtJadz9","name":"Shareable video name","type":"text","typeOptions":null},{"id":"fldip5YDfV9YsKCxW","name":"Twitter URL","type":"lookup","typeOptions":{"relationColumnId":"fldAZyyL4UXVF2KEK","foreignTableRollupColumnId":"fldvC6sAS7FwpiG2h","dependencies":{"referencedColumnIdsForValue":["fldAZyyL4UXVF2KEK","fldvC6sAS7FwpiG2h"]},"resultType":"text"}},{"id":"fld8lTJADdU4uCHml","name":"Article gdoc","type":"rollup","typeOptions":{"relationColumnId":"fldAZyyL4UXVF2KEK","foreignTableRollupColumnId":"fldTdzt7zGYn7oKt3","formulaTextParsed":"ARRAYUNIQUE(values)","dependencies":{"referencedColumnIdsForValue":["fldAZyyL4UXVF2KEK","fldTdzt7zGYn7oKt3"]},"resultType":"text"}},{"id":"fldwjQ1LdsncIwQq9","name":"Graphics","type":"rollup","typeOptions":{"relationColumnId":"fldAZyyL4UXVF2KEK","foreignTableRollupColumnId":"fldLjrexC590lFWsh","formulaTextParsed":"ARRAYUNIQUE(values)","dependencies":{"referencedColumnIdsForValue":["fldAZyyL4UXVF2KEK","fldLjrexC590lFWsh"]},"resultType":"text"}},{"id":"fldkzklXrU0FeqzU2","name":"Notes","type":"multilineText","typeOptions":null},{"id":"fldK2oMBiP7FQPNip","name":"Video status","type":"rollup","typeOptions":{"relationColumnId":"fldAZyyL4UXVF2KEK","foreignTableRollupColumnId":"fldyAD6ZSzhA8pgOt","formulaTextParsed":"ARRAYUNIQUE(values)","dependencies":{"referencedColumnIdsForValue":["fldAZyyL4UXVF2KEK","fldyAD6ZSzhA8pgOt"]},"resultType":"text"}},{"id":"fldn1IBk3eeKHaSqG","name":"Video link","type":"rollup","typeOptions":{"relationColumnId":"fldAZyyL4UXVF2KEK","foreignTableRollupColumnId":"fldcxnFJpJJ5R5bIE","formulaTextParsed":"ARRAYUNIQUE(values)","dependencies":{"referencedColumnIdsForValue":["fldAZyyL4UXVF2KEK","fldcxnFJpJJ5R5bIE"]},"resultType":"text"}},{"id":"fldpGvXv5Pk4l8wuF","name":"Active in social queue","type":"lookup","typeOptions":{"relationColumnId":"fldAZyyL4UXVF2KEK","foreignTableRollupColumnId":"fldgeYX4mmk7ONP1t","dependencies":{"referencedColumnIdsForValue":["fldAZyyL4UXVF2KEK","fldgeYX4mmk7ONP1t"]},"resultType":"text"}},{"id":"fldoSTBP3rm8TufEd","name":"Promo type","type":"select","typeOptions":{"choiceOrder":["selPvB0PZRlVH2Ag7","selCBLvOG9yERAijq","selSntTFruDy9OMJl"],"choices":{"selPvB0PZRlVH2Ag7":{"id":"selPvB0PZRlVH2Ag7","color":"cyanDark","name":"Video"},"selCBLvOG9yERAijq":{"id":"selCBLvOG9yERAijq","color":"yellowDark","name":"Photo"},"selSntTFruDy9OMJl":{"id":"selSntTFruDy9OMJl","color":"grayDark","name":"Link"}},"disableColors":false}},{"id":"fldR1OgjjMFTwMmpz","name":"Shareable photo","type":"multipleAttachment","typeOptions":null},{"id":"fldZdRSkBfxVroBiN","name":"Promo type calc","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fldoSTBP3rm8TufEd}=\"Link\",\"link\",IF({column_value_fldoSTBP3rm8TufEd}=\"Video\",\"video\",IF({column_value_fldoSTBP3rm8TufEd}=\"Photo\",\"photo\",IF({column_value_fldoSTBP3rm8TufEd}=\"\",\"link\"))))","dependencies":{"referencedColumnIdsForValue":["fldoSTBP3rm8TufEd"]},"resultType":"text"}},{"id":"fldmmQIEtoPtlOpQj","name":"Facebook URL","type":"lookup","typeOptions":{"relationColumnId":"fldAZyyL4UXVF2KEK","foreignTableRollupColumnId":"fldzxtwzqbIJvDnDY","dependencies":{"referencedColumnIdsForValue":["fldAZyyL4UXVF2KEK","fldzxtwzqbIJvDnDY"]},"resultType":"text"}},{"id":"fldx2kqjLnvbgALiM","name":"Linkedin URL","type":"lookup","typeOptions":{"relationColumnId":"fldAZyyL4UXVF2KEK","foreignTableRollupColumnId":"fldzEmoyuGTgfmNsf","dependencies":{"referencedColumnIdsForValue":["fldAZyyL4UXVF2KEK","fldzEmoyuGTgfmNsf"]},"resultType":"text"}},{"id":"fldcXe7JYo2UD35dw","name":"Approve to publish on these social networks","type":"multiSelect","typeOptions":{"choiceOrder":["selJ0q1Lgl5FCxwma","sel5mCkMXyEhREuaZ","sel8TuDRR0fayrENe"],"choices":{"selJ0q1Lgl5FCxwma":{"id":"selJ0q1Lgl5FCxwma","color":"blueDarker","name":"Facebook"},"sel5mCkMXyEhREuaZ":{"id":"sel5mCkMXyEhREuaZ","color":"yellowDark","name":"Twitter"},"sel8TuDRR0fayrENe":{"id":"sel8TuDRR0fayrENe","color":"grayDark","name":"Linkedin"}},"disableColors":false}},{"id":"fldYy8TMhhj8U6cl1","name":"Facebook performance","type":"rollup","typeOptions":{"relationColumnId":"fldRa5HrpsbVcVDJB","foreignTableRollupColumnId":"fldq6pwzWKV6pJmGW","formulaTextParsed":"SUM(values)","dependencies":{"referencedColumnIdsForValue":["fldRa5HrpsbVcVDJB","fldq6pwzWKV6pJmGW"]},"resultType":"number"}},{"id":"fldj0P6iG5vUHl23Y","name":"Linkedin performance","type":"rollup","typeOptions":{"relationColumnId":"fldRa5HrpsbVcVDJB","foreignTableRollupColumnId":"fld8Bz0legWvTE3IS","formulaTextParsed":"SUM(values)","dependencies":{"referencedColumnIdsForValue":["fldRa5HrpsbVcVDJB","fld8Bz0legWvTE3IS"]},"resultType":"number"}},{"id":"fldO5zTUjujRd2wVs","name":"Number of times posted on facebook","type":"rollup","typeOptions":{"relationColumnId":"fldRa5HrpsbVcVDJB","foreignTableRollupColumnId":"fldywOUU1m9cy1EU2","formulaTextParsed":"SUM(values)","dependencies":{"referencedColumnIdsForValue":["fldRa5HrpsbVcVDJB","fldywOUU1m9cy1EU2"]},"resultType":"number"}},{"id":"fldNL2ssRoQGGSY4N","name":"Number of times posted on linkedin","type":"rollup","typeOptions":{"relationColumnId":"fldRa5HrpsbVcVDJB","foreignTableRollupColumnId":"fld3dOOAJxHpJidP8","formulaTextParsed":"SUM(values)","dependencies":{"referencedColumnIdsForValue":["fldRa5HrpsbVcVDJB","fld3dOOAJxHpJidP8"]},"resultType":"number"}},{"id":"fldjSy4GFEFbtRp30","name":"latest post facebook date","type":"rollup","typeOptions":{"relationColumnId":"fldRa5HrpsbVcVDJB","foreignTableRollupColumnId":"fldIjeAFGybwc4IYI","formulaTextParsed":"MAX(values)","dependencies":{"referencedColumnIdsForValue":["fldRa5HrpsbVcVDJB","fldIjeAFGybwc4IYI"]},"resultType":"date"}},{"id":"fld9Zcd4TwSULsH24","name":"latest post linkedin date","type":"rollup","typeOptions":{"relationColumnId":"fldRa5HrpsbVcVDJB","foreignTableRollupColumnId":"fldq2Kz4IOaW4kotx","formulaTextParsed":"MAX(values)","dependencies":{"referencedColumnIdsForValue":["fldRa5HrpsbVcVDJB","fldq2Kz4IOaW4kotx"]},"resultType":"date"}},{"id":"fld1T8pYHGNJScP26","name":"Published URL","type":"lookup","typeOptions":{"relationColumnId":"fldAZyyL4UXVF2KEK","foreignTableRollupColumnId":"fldYUSQtQuvREsfV9","dependencies":{"referencedColumnIdsForValue":["fldAZyyL4UXVF2KEK","fldYUSQtQuvREsfV9"]},"resultType":"text"}},{"id":"fld2cbTEfJ6xkjUWW","name":"Tweet length alert","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fldcXe7JYo2UD35dw}=\"Twitter\",IF(LEN({column_value_fldbysUR4qwhvq0vy}&{column_value_fldip5YDfV9YsKCxW})\u003E277,\"🛑🛑🛑🛑🛑🛑🛑\",\"✅\"),\"✅\")","dependencies":{"referencedColumnIdsForValue":["fldcXe7JYo2UD35dw","fldbysUR4qwhvq0vy","fldip5YDfV9YsKCxW"]},"resultType":"text"}},{"id":"fldTR0ur3LZOWZTfQ","name":"Do not post this","type":"checkbox","typeOptions":{"color":"red","icon":"flag"}},{"id":"fldPN92R0tsDtc5Qw","name":"Check for url","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fld1T8pYHGNJScP26},\"✅\", \"⛔ no url\")","dependencies":{"referencedColumnIdsForValue":["fld1T8pYHGNJScP26"]},"resultType":"text"}},{"id":"fldepMG3awMYk6c2G","name":"Check for social promo","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fldbysUR4qwhvq0vy},\"✅\", \"⛔ no social promo\")","dependencies":{"referencedColumnIdsForValue":["fldbysUR4qwhvq0vy"]},"resultType":"text"}},{"id":"fldD2cJTOQuWUdvw2","name":"Check for shareable","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fldoSTBP3rm8TufEd}=\"Photo\",IF({column_value_fldR1OgjjMFTwMmpz},\"✅\", \"⛔ image missing\"),IF({column_value_fldoSTBP3rm8TufEd}=\"Video\",IF({column_value_fldelrnW8WZtJadz9},\"✅\", \"⛔ video file name missing\"),\"✅\"))","dependencies":{"referencedColumnIdsForValue":["fldoSTBP3rm8TufEd","fldR1OgjjMFTwMmpz","fldelrnW8WZtJadz9"]},"resultType":"text"}},{"id":"fld0JYv40iLBoZSfB","name":"Check for shareable filename","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fldoSTBP3rm8TufEd}=\"Photo\",IF(FIND(\",\",{column_value_fldR1OgjjMFTwMmpz}),\"⛔ contains comma\",\"✅\"),\"✅\")","dependencies":{"referencedColumnIdsForValue":["fldoSTBP3rm8TufEd","fldR1OgjjMFTwMmpz"]},"resultType":"text"}},{"id":"fldf0CWCUOOxosivc","name":"Auto schedule","type":"checkbox","typeOptions":{"color":"gray","icon":"star"}},{"id":"flddVrCgjW9OYTdDP","name":"Last modified","type":"formula","typeOptions":{"isDateTime":true,"dateFormat":"Local","displayType":"lastModifiedTime","timeZone":"client","formulaTextParsed":"LAST_MODIFIED_TIME()","dependencies":{"referencedColumnIdsForValue":[],"dependsOnAllColumnModifications":true},"resultType":"date"}}],"sampleRows":[],"primaryColumnName":"Promo text","defaultView":{"id":"viw7UEGDIGQKK0pUN","name":"Layout view 2"},"isEmptyDueToFilter":false},{"id":"tblOndmV8cQVJlucQ","name":"Social schedule","columns":[{"id":"fldHs6Qgp9zZrKcmH","name":"Slot","type":"formula","typeOptions":{"dateFormat":"Local","isDateTime":false,"timeZone":"UTC","formulaTextParsed":"{column_value_fldEO41By0aUUC3Z5}&\": \"&{column_value_flddLUsuLXmTF2MN1}&\" \"&DATETIME_FORMAT({column_value_fldXxhMd3sohzIff7},'DD-MM-YYYY') & \"-\"& {column_value_fld1hQcLJL0TKmra4}","dependencies":{"referencedColumnIdsForValue":["fldEO41By0aUUC3Z5","flddLUsuLXmTF2MN1","fldXxhMd3sohzIff7","fld1hQcLJL0TKmra4"]},"resultType":"text"}},{"id":"fld7KTfRfGth5MG3F","name":"Twitter ID","type":"text","typeOptions":null},{"id":"fldvdm7g8fkeKmyB6","name":"Twitter performance","type":"number","typeOptions":{"format":"integer","negative":false,"validatorName":"positive"}},{"id":"fldXxhMd3sohzIff7","name":"Date","type":"date","typeOptions":{"isDateTime":true,"dateFormat":"Local","timeFormat":"12hour","timeZone":"client"}},{"id":"fld1hQcLJL0TKmra4","name":"ID","type":"autoNumber","typeOptions":{"maxUsedAutoNumber":1084}},{"id":"flddLUsuLXmTF2MN1","name":"Social promo","type":"foreignKey","typeOptions":{"relationship":"one","foreignTableId":"tblZl4EVqbqy4fPdt","symmetricColumnId":"fldRa5HrpsbVcVDJB","viewIdForRecordSelection":"viwA13doo3hVqcWbF"}},{"id":"fldljFGLjsWLly9K2","name":"Last updated","type":"formula","typeOptions":{"dateFormat":"Local","isDateTime":true,"timeZone":"client","displayType":"lastModifiedTime","formulaTextParsed":"LAST_MODIFIED_TIME()","dependencies":{"referencedColumnIdsForValue":[],"dependsOnAllColumnModifications":true},"resultType":"date"}},{"id":"fldA0jHzjID0AEriP","name":"Justday","type":"formula","typeOptions":{"formulaTextParsed":"DATETIME_FORMAT(column_value_fldXxhMd3sohzIff7,'DD-MM-YYYY')","dependencies":{"referencedColumnIdsForValue":["fldXxhMd3sohzIff7"]},"resultType":"text"}},{"id":"fldiAVBxboQ5U5fUd","name":"Post text","type":"lookup","typeOptions":{"relationColumnId":"flddLUsuLXmTF2MN1","foreignTableRollupColumnId":"fldbysUR4qwhvq0vy","dependencies":{"referencedColumnIdsForValue":["flddLUsuLXmTF2MN1","fldbysUR4qwhvq0vy"]},"resultType":"multilineText"}},{"id":"fld2tvZVQUYL9OeeW","name":"Twitter URL","type":"lookup","typeOptions":{"relationColumnId":"flddLUsuLXmTF2MN1","foreignTableRollupColumnId":"fldip5YDfV9YsKCxW","dependencies":{"referencedColumnIdsForValue":["flddLUsuLXmTF2MN1","fldip5YDfV9YsKCxW"]},"resultType":"text"}},{"id":"fld7k8J9eWNeJjuiS","name":"Buffer tweet ID","type":"text","typeOptions":null},{"id":"fld55k2xZwMCuNfHJ","name":"Slot updated","type":"formula","typeOptions":{"dateFormat":"Local","isDateTime":true,"timeZone":"client","displayType":"lastModifiedTime","formulaTextParsed":"LAST_MODIFIED_TIME()","dependencies":{"referencedColumnIdsForValue":[],"dependsOnAllColumnModifications":true},"resultType":"date"}},{"id":"fldzwWtXnMrm2WwPs","name":"Shareable video","type":"lookup","typeOptions":{"relationColumnId":"flddLUsuLXmTF2MN1","foreignTableRollupColumnId":"fldelrnW8WZtJadz9","dependencies":{"referencedColumnIdsForValue":["flddLUsuLXmTF2MN1","fldelrnW8WZtJadz9"]},"resultType":"text"}},{"id":"fldo2df4NUiK2vRrk","name":"update stats","type":"select","typeOptions":{"choiceOrder":["selLlSzmFc6VDVCwK","selCiSeG92ixzHoaS"],"choices":{"selLlSzmFc6VDVCwK":{"id":"selLlSzmFc6VDVCwK","color":"blue","name":"yes"},"selCiSeG92ixzHoaS":{"id":"selCiSeG92ixzHoaS","color":"cyan","name":"no"}},"disableColors":false}},{"id":"fld3UFhVKG5u28Lar","name":"Linkedin ID","type":"text","typeOptions":null},{"id":"fldXJHFikMrRN2m7l","name":"Facebook ID","type":"text","typeOptions":null},{"id":"fldq6pwzWKV6pJmGW","name":"Facebook performance","type":"number","typeOptions":{"format":"integer","negative":false,"validatorName":"positive"}},{"id":"fld8Bz0legWvTE3IS","name":"Linkedin performance","type":"number","typeOptions":{"format":"integer","negative":false,"validatorName":"positive"}},{"id":"fld4FPdDKMdG0CEgj","name":"Check url","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fld2tvZVQUYL9OeeW},\"✅\", \"⛔ url missing\")","dependencies":{"referencedColumnIdsForValue":["fld2tvZVQUYL9OeeW"]},"resultType":"text"}},{"id":"fld9qpY5nVRiSbJGX","name":"Check promo","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_flddLUsuLXmTF2MN1},\"✅\", \"⛔ missing promo\")","dependencies":{"referencedColumnIdsForValue":["flddLUsuLXmTF2MN1"]},"resultType":"text"}},{"id":"fldL5p4fEXd2OKSLX","name":"Post type","type":"lookup","typeOptions":{"relationColumnId":"flddLUsuLXmTF2MN1","foreignTableRollupColumnId":"fldZdRSkBfxVroBiN","dependencies":{"referencedColumnIdsForValue":["flddLUsuLXmTF2MN1","fldZdRSkBfxVroBiN"]},"resultType":"text"}},{"id":"fldEO41By0aUUC3Z5","name":"Link type","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fldL5p4fEXd2OKSLX}=\"video\",\"video\",IF({column_value_fldL5p4fEXd2OKSLX}=\"link\",\"link\",IF({column_value_fldL5p4fEXd2OKSLX}=\"photo\",\"photo\",\"link\")))","dependencies":{"referencedColumnIdsForValue":["fldL5p4fEXd2OKSLX"]},"resultType":"text"}},{"id":"fldW8nEspKeZs0Bt6","name":"Active in social queue","type":"lookup","typeOptions":{"relationColumnId":"flddLUsuLXmTF2MN1","foreignTableRollupColumnId":"fldpGvXv5Pk4l8wuF","dependencies":{"referencedColumnIdsForValue":["flddLUsuLXmTF2MN1","fldpGvXv5Pk4l8wuF"]},"resultType":"text"}},{"id":"fldEHDQzObP3dfb4Q","name":"Shareable photo","type":"lookup","typeOptions":{"relationColumnId":"flddLUsuLXmTF2MN1","foreignTableRollupColumnId":"fldR1OgjjMFTwMmpz","dependencies":{"referencedColumnIdsForValue":["flddLUsuLXmTF2MN1","fldR1OgjjMFTwMmpz"]},"resultType":"multipleAttachment"}},{"id":"fldT4fYfqo8ay7CH3","name":"Timetopublish","type":"formula","typeOptions":{"formulaTextParsed":"IF(DATETIME_DIFF(column_value_fldXxhMd3sohzIff7,NOW(),'minutes')\u003E-10,IF(DATETIME_DIFF(column_value_fldXxhMd3sohzIff7,NOW(),'minutes')\u003C10,\"Push\",\"No\"),\"No\")","dependencies":{"referencedColumnIdsForValue":["fldXxhMd3sohzIff7"],"dependsOnCurrentTime":true},"resultType":"text"}},{"id":"fldJjF6gAREIC3aqh","name":"Social promo status","type":"lookup","typeOptions":{"relationColumnId":"flddLUsuLXmTF2MN1","foreignTableRollupColumnId":"fldDyKLr7BaxoLNn4","dependencies":{"referencedColumnIdsForValue":["flddLUsuLXmTF2MN1","fldDyKLr7BaxoLNn4"]},"resultType":"text"}},{"id":"fldUf91oKCNXiPk2j","name":"Shareable photo url","type":"formula","typeOptions":{"formulaTextParsed":"RIGHT(\n   LEFT(\n      {column_value_fldEHDQzObP3dfb4Q},\n      LEN({column_value_fldEHDQzObP3dfb4Q}) - 1\n   ),\n   LEN(\n      LEFT(\n         {column_value_fldEHDQzObP3dfb4Q},\n         LEN({column_value_fldEHDQzObP3dfb4Q}) - 1\n      )\n   ) - SEARCH(\n      \"https:\u002F\u002F\",\n      {column_value_fldEHDQzObP3dfb4Q}\n   ) + 1\n)","dependencies":{"referencedColumnIdsForValue":["fldEHDQzObP3dfb4Q"]},"resultType":"text"}},{"id":"fldDej56MS5r2X4iR","name":"Social network","type":"multiSelect","typeOptions":{"choiceOrder":["selsRDJt6T6u7NOo3","seliWQpTPkmzFhSlu","selpgi5IvXgzQRFqP"],"choices":{"selsRDJt6T6u7NOo3":{"id":"selsRDJt6T6u7NOo3","name":"Facebook","color":"blueDarker"},"seliWQpTPkmzFhSlu":{"id":"seliWQpTPkmzFhSlu","name":"Linkedin","color":"grayDark"},"selpgi5IvXgzQRFqP":{"id":"selpgi5IvXgzQRFqP","color":"yellowDark","name":"Twitter"}},"disableColors":false}},{"id":"fldzD0G1Pb37k6sVr","name":"Facebook URL","type":"lookup","typeOptions":{"relationColumnId":"flddLUsuLXmTF2MN1","foreignTableRollupColumnId":"fldmmQIEtoPtlOpQj","dependencies":{"referencedColumnIdsForValue":["flddLUsuLXmTF2MN1","fldmmQIEtoPtlOpQj"]},"resultType":"text"}},{"id":"fldi65tKwGGi3hzaG","name":"Linkedin URL","type":"lookup","typeOptions":{"relationColumnId":"flddLUsuLXmTF2MN1","foreignTableRollupColumnId":"fldx2kqjLnvbgALiM","dependencies":{"referencedColumnIdsForValue":["flddLUsuLXmTF2MN1","fldx2kqjLnvbgALiM"]},"resultType":"text"}},{"id":"fldnBvx6y4nwsYBoq","name":"Buffer linkedin ID","type":"text","typeOptions":null},{"id":"fld2CTIzFcmkPZnjT","name":"Buffer facebook ID","type":"text","typeOptions":null},{"id":"fld2DtRHabADDGuvE","name":"Twitter post","type":"formula","typeOptions":{"formulaTextParsed":"IF(SEARCH(\"Twitter\",ARRAYJOIN({column_value_fldDej56MS5r2X4iR})),\"1\",\"0\")","dependencies":{"referencedColumnIdsForValue":["fldDej56MS5r2X4iR"]},"resultType":"text"}},{"id":"fldywOUU1m9cy1EU2","name":"Facebook post","type":"formula","typeOptions":{"formulaTextParsed":"IF(SEARCH(\"Facebook\",ARRAYJOIN({column_value_fldDej56MS5r2X4iR})),\"1\",\"0\")","dependencies":{"referencedColumnIdsForValue":["fldDej56MS5r2X4iR"]},"resultType":"text"}},{"id":"fld3dOOAJxHpJidP8","name":"Linkedin post","type":"formula","typeOptions":{"formulaTextParsed":"IF(SEARCH(\"Linkedin\",ARRAYJOIN({column_value_fldDej56MS5r2X4iR})),\"1\",\"0\")","dependencies":{"referencedColumnIdsForValue":["fldDej56MS5r2X4iR"]},"resultType":"text"}},{"id":"fldW1YKMqA86eFZVP","name":"Twitter date","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fld2DtRHabADDGuvE}=1,DATEADD(column_value_fldXxhMd3sohzIff7,2,'hours'))","dependencies":{"referencedColumnIdsForValue":["fld2DtRHabADDGuvE","fldXxhMd3sohzIff7"]},"resultType":"date"}},{"id":"fldIjeAFGybwc4IYI","name":"Facebook date","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fldywOUU1m9cy1EU2}=1,DATEADD(column_value_fldXxhMd3sohzIff7,2,'hours'))","dependencies":{"referencedColumnIdsForValue":["fldywOUU1m9cy1EU2","fldXxhMd3sohzIff7"]},"resultType":"date"}},{"id":"fldq2Kz4IOaW4kotx","name":"Linkedin date","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fld3dOOAJxHpJidP8}=1,DATEADD(column_value_fldXxhMd3sohzIff7,2,'hours'))","dependencies":{"referencedColumnIdsForValue":["fld3dOOAJxHpJidP8","fldXxhMd3sohzIff7"]},"resultType":"date"}},{"id":"fldXHNAjyjpnpTX6B","name":"Status","type":"select","typeOptions":{"choiceOrder":["selaP6viI7lDV2UE2","selAhUDPkBdPAFAj7"],"choices":{"selaP6viI7lDV2UE2":{"id":"selaP6viI7lDV2UE2","color":"green","name":"Scheduled"},"selAhUDPkBdPAFAj7":{"id":"selAhUDPkBdPAFAj7","color":"greenDark","name":"Published"}},"disableColors":false}},{"id":"fldN1EFxIKiGuQmVe","name":"Target social network","type":"formula","typeOptions":{"formulaTextParsed":"ARRAYFLATTEN({column_value_fldDej56MS5r2X4iR})","dependencies":{"referencedColumnIdsForValue":["fldDej56MS5r2X4iR"]},"resultType":"text"}},{"id":"fldkNnBreAPYhGkXP","name":"Approved to publish on these social networks","type":"lookup","typeOptions":{"relationColumnId":"flddLUsuLXmTF2MN1","foreignTableRollupColumnId":"fldcXe7JYo2UD35dw","dependencies":{"referencedColumnIdsForValue":["flddLUsuLXmTF2MN1","fldcXe7JYo2UD35dw"]},"resultType":"text"}},{"id":"fldD40KzYbNxmtxWx","name":"Do not post this","type":"checkbox","typeOptions":{"color":"red","icon":"flag"}},{"id":"fldeHdF8NQ3KO31si","name":"Social performance","type":"formula","typeOptions":{"formulaTextParsed":"{column_value_fldvdm7g8fkeKmyB6}&{column_value_fldq6pwzWKV6pJmGW}&{column_value_fld8Bz0legWvTE3IS}","dependencies":{"referencedColumnIdsForValue":["fldvdm7g8fkeKmyB6","fldq6pwzWKV6pJmGW","fld8Bz0legWvTE3IS"]},"resultType":"text"}},{"id":"fldlns8JDsMFQ5j4I","name":"Check shareable exists","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fldEO41By0aUUC3Z5}=\"photo\",IF({column_value_fldEHDQzObP3dfb4Q},\"✅\", \"⛔ image missing\"),IF({column_value_fldEO41By0aUUC3Z5}=\"video\",IF({column_value_fldzwWtXnMrm2WwPs},\"✅\", \"⛔ video missing\"),\"✅\"))","dependencies":{"referencedColumnIdsForValue":["fldEO41By0aUUC3Z5","fldEHDQzObP3dfb4Q","fldzwWtXnMrm2WwPs"]},"resultType":"text"}},{"id":"fldckaqkpo7O8D7i0","name":"Check shareable filename","type":"formula","typeOptions":{"formulaTextParsed":"IF({column_value_fldEO41By0aUUC3Z5}=\"photo\",IF(FIND(\",\",{column_value_fldEHDQzObP3dfb4Q}),\"⛔ contains comma\",\"✅\"),\"✅\")","dependencies":{"referencedColumnIdsForValue":["fldEO41By0aUUC3Z5","fldEHDQzObP3dfb4Q"]},"resultType":"text"}},{"id":"fldnvBXnJC9qf8sIx","name":"Tweet length","type":"lookup","typeOptions":{"relationColumnId":"flddLUsuLXmTF2MN1","foreignTableRollupColumnId":"fld2cbTEfJ6xkjUWW","dependencies":{"referencedColumnIdsForValue":["flddLUsuLXmTF2MN1","fld2cbTEfJ6xkjUWW"]},"resultType":"text"}}],"sampleRows":[],"primaryColumnName":"Slot","defaultView":{"id":"viwPIsp65HZuFBpm5","name":"Grid view"},"isEmptyDueToFilter":false},{"id":"tblpgYg7TJUdshv2G","name":"Submission Form","columns":[{"id":"fldcaA02DB0QNpi9i","name":"Name","type":"text","typeOptions":null},{"id":"fldhe5Ld1ixTp1KPg","name":"Step","type":"text","typeOptions":null},{"id":"fldzbcisb974L4qG9","name":"Field Type","type":"select","typeOptions":{"disableColors":false,"choices":{"selhIYtoswkcYT7Um":{"id":"selhIYtoswkcYT7Um","name":"HTML","color":"blue"},"selk9XIl1g0MdgLEO":{"id":"selk9XIl1g0MdgLEO","name":"Text","color":"cyan"},"selKrk5tnfPazPEN7":{"id":"selKrk5tnfPazPEN7","name":"Email","color":"teal"},"selIxgoXuBeA8gEVr":{"id":"selIxgoXuBeA8gEVr","name":"SingleSelect","color":"green"},"selkVLQDyXwOOkLqq":{"id":"selkVLQDyXwOOkLqq","name":"MultipleSelect","color":"yellow"},"seljxZ4VYpoj4BNJv":{"id":"seljxZ4VYpoj4BNJv","name":"Summary","color":"redDark"}},"choiceOrder":["selhIYtoswkcYT7Um","selk9XIl1g0MdgLEO","selKrk5tnfPazPEN7","selIxgoXuBeA8gEVr","selkVLQDyXwOOkLqq","seljxZ4VYpoj4BNJv"]}},{"id":"fldhZWbMl59gMTKsc","name":"Label","type":"text","typeOptions":null},{"id":"fldopfL0rHYBZsh07","name":"Content","type":"multilineText","typeOptions":null},{"id":"fldMBvOPLIN756Kvl","name":"Field Group","type":"text","typeOptions":null},{"id":"fld3QjRJeyUThDItB","name":"Target Table","type":"text","typeOptions":null},{"id":"fldH5wpjyIFUh7OmA","name":"Target Field","type":"text","typeOptions":null}],"sampleRows":[{"id":"recqrs0QpTlQs6k6f","fields":{"Field Group":"Introduction","Name":"Introduction","Step":"Introduction","Content":"\u003Ch1\u003ELorem ipsum\u003C\u002Fh1\u003E","Field Type":"HTML"},"createdTime":"2020-05-04T12:45:50.000Z"},{"id":"recpTQylwc8KNeN6o","fields":{"Target Table":"Daily content","Target Field":"IOM Submitter","Field Group":"What is your full name?","Name":"Submitter name","Label":"Full name","Step":"Source","Field Type":"Text"},"createdTime":"2020-05-04T12:45:50.000Z"},{"id":"recdQuU3q7Xe76ER1","fields":{"Target Table":"Daily content","Target Field":"IOM Submitter email","Field Group":"What is your email address?","Name":"Submitter email","Label":"Email address","Step":"Source","Field Type":"Email"},"createdTime":"2020-05-04T12:45:50.000Z"},{"id":"recI0Dc2o7KOUxJaR","fields":{"Target Table":"Daily content","Target Field":"IOM Region","Field Group":"What is your location?","Name":"Location","Label":"Location","Step":"Source","Field Type":"SingleSelect"},"createdTime":"2020-05-04T12:54:41.000Z"},{"id":"recmCR1WXckpRzoNx","fields":{"Target Table":"Daily content","Target Field":"IOM Submitter position","Field Group":"What is your position?","Name":"Submitter position","Label":"Position","Step":"Source","Field Type":"Text"},"createdTime":"2020-05-04T12:55:58.000Z"},{"id":"rec0BGDj4yzE9YfAG","fields":{"Target Table":"Daily content","Target Field":"IOM Content type","Field Group":"What type of content is this?","Name":"Content type","Label":"Content type","Step":"Source","Field Type":"SingleSelect"},"createdTime":"2020-05-04T12:56:44.000Z"},{"id":"recYWNgn6FyvPuV15","fields":{"Target Table":"Daily content","Target Field":"IOM Division","Field Group":"Which division is coordinating?","Name":"Division","Label":"Division","Step":"Source","Field Type":"MultipleSelect"},"createdTime":"2020-05-04T12:58:23.000Z"},{"id":"recUp7cNcLP2KD1U6","fields":{"Target Table":"Daily content","Target Field":"Writer","Field Group":"Who is the author?","Name":"Author name","Label":"Full name","Step":"Process","Field Type":"Text"},"createdTime":"2020-05-04T12:59:23.000Z"},{"id":"recrdpZKbLyC5tyL5","fields":{"Target Table":"Daily content","Target Field":"Writer","Field Group":"Who is the author?","Name":"Author email","Label":"Email address","Step":"Process","Field Type":"Email"},"createdTime":"2020-05-04T13:00:04.000Z"},{"id":"rec55FbWwoMs0Ecdi","fields":{"Field Group":"Submission summary","Name":"Summary","Step":"Summary","Field Type":"Summary"},"createdTime":"2020-05-04T13:35:31.000Z"}],"primaryColumnName":"Name","defaultView":{"id":"viwKzIregWKYODqBX","name":"Grid view"},"isEmptyDueToFilter":false}],"color":"gray","icon":"bolt"};
-            window.appPickerApplicationIdToName = {"app35UxEVbcwUWUwd":"Sales CRM","app8pD6kLBJ6fm4yz":"Dev template 1","appHG36dkwlQtbDPH":"UNDRR Content Engine","appMOLiWa2Ah9xVuV":"TCE template v5 DEV","appRdLZ915gjhK1Bx":"Content calendar","appXbTQrCMZ5IZU9m":"Product planning","appa4Jy2VNe3Qx3Kt":"IOM Content Engine","appcHFVP5xIcBhCk1":"User research","appeJkyZHPiut4ZJi":"Product launch","applYQunwITFuaAtF":"Project tracker"};
+        <script nonce="heDCKGRvpiUf">
+            window.appPickerApplicationIdToName = {"app35UxEVbcwUWUwd":"Sales CRM","app8pD6kLBJ6fm4yz":"Dev template 1","appHG36dkwlQtbDPH":"UNDRR Content Engine","appMOLiWa2Ah9xVuV":"TCE template v5 DEV","appRdLZ915gjhK1Bx":"Content calendar","appXbTQrCMZ5IZU9m":"Product planning","appa4Jy2VNe3Qx3Kt":"IOM Content Engine","appcHFVP5xIcBhCk1":"User research","appdEZLWBaSkQO86T":"Demo Base","appeJkyZHPiut4ZJi":"Product launch","appj5X3Nz3jILP9kb":"IOM Content Engine II","applYQunwITFuaAtF":"Project tracker"};
             window.appPickerWorkspaceIdToName = {"wspNsZseMjpH8ajx6":"My First Workspace","wspSHARED00000000":"Bases shared with me"};
         </script>
 
-        <script src="//static.airtable.com/js/lib/regenerator-runtime.min.js" nonce="wcnxUDxnyNMr" crossorigin=anonymous></script>
-<script src="//static.airtable.com/js/lib/jquery/2.1.4/jquery.min.js" nonce="wcnxUDxnyNMr" crossorigin=anonymous></script>
-<script src="//static.airtable.com/js/lib/jquery/jquery-ui-1.11.4.custom.mod6.min.js" nonce="wcnxUDxnyNMr" crossorigin=anonymous></script>
-<script src="//static.airtable.com/js/lib/angularjs/1.3.8/angular.min.js" nonce="wcnxUDxnyNMr" crossorigin=anonymous></script>
-<script src="//static.airtable.com/js/lib/angularjs/highlight.pack.js" nonce="wcnxUDxnyNMr" crossorigin=anonymous></script>
-<script src="//static.airtable.com/js/lib/angularjs/angular-highlightjs.js" nonce="wcnxUDxnyNMr" crossorigin=anonymous></script>
-<script src="https://static.airtable.com/js/by_sha/0be28cf8/application_api_docs.js" nonce="wcnxUDxnyNMr" crossorigin=anonymous></script>
-        <script nonce="wcnxUDxnyNMr">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        <script src="//static.airtable.com/js/lib/regenerator-runtime.min.js" nonce="heDCKGRvpiUf" crossorigin=anonymous></script>
+<script src="//static.airtable.com/js/lib/jquery/2.1.4/jquery.min.js" nonce="heDCKGRvpiUf" crossorigin=anonymous></script>
+<script src="//static.airtable.com/js/lib/jquery/jquery-ui-1.11.4.custom.mod6.min.js" nonce="heDCKGRvpiUf" crossorigin=anonymous></script>
+<script src="//static.airtable.com/js/lib/angularjs/1.3.8/angular.min.js" nonce="heDCKGRvpiUf" crossorigin=anonymous></script>
+<script src="//static.airtable.com/js/lib/angularjs/highlight.pack.js" nonce="heDCKGRvpiUf" crossorigin=anonymous></script>
+<script src="//static.airtable.com/js/lib/angularjs/angular-highlightjs.js" nonce="heDCKGRvpiUf" crossorigin=anonymous></script>
+<script src="https://static.airtable.com/js/by_sha/5ba81126/application_api_docs.js" nonce="heDCKGRvpiUf" crossorigin=anonymous></script>
+        <script nonce="heDCKGRvpiUf">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
@@ -134,7 +133,7 @@ payload)
 ga('create', 'UA-55182693-1', 'auto');
 ga('send', 'pageview');</script>
 
-<script nonce="wcnxUDxnyNMr">
+<script nonce="heDCKGRvpiUf">
 !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.1";
     analytics.load("nwg4rpj479");
 }}();</script>
@@ -148,43 +147,43 @@ ga('send', 'pageview');</script>
 
     <body>
         <div ng-app="applicationDocumentationApp">
-            <div ng-controller="applicationApiDocumentation" data-api-key="keyLfBIkoTj4CQvS3" data-endpoint-url="https://api.airtable.com" data-latest-api-version="0.1.0">
+            <div ng-controller="applicationApiDocumentation" data-api-key="keytMXSY66g3EpzKW" data-endpoint-url="https://api.airtable.com" data-latest-api-version="0.1.0">
 
                 <div class="topbar">
                     <div class="titleButton">
-                        
-<div class="appIcon brightColoredBackground" data-color="gray">
+
+<div class="appIcon brightColoredBackground" data-color="cyan">
     <div class="symbol">
-        
-            <i class="icon icon-bolt"></i>
-        
+
+            De
+
     </div>
 </div>
 
                         <div class="name">Airtable API for "{{ application.name }}"</div>
                         <i class="appPickerIcon icon-angle-down"></i>
                     </div>
-                    <a target="_blank" rel="noopener noreferrer" class="openApp" href="/appa4Jy2VNe3Qx3Kt">Open base</a>
+                    <a target="_blank" rel="noopener noreferrer" class="openApp" href="/appdEZLWBaSkQO86T">Open base</a>
                 </div>
 
                 <ul class="appPicker menu linkMenu">
-    
-        
-        
+
+
+
             <div class="workspace ui-state-disabled">
                 {{ 'wspSHARED00000000' | appPickerWorkspaceIdToName }}
             </div>
-            
-                
+
+
 <li class="app menuItemWithLink" menuitemvalue="app8pD6kLBJ6fm4yz">
     <a href="/app8pD6kLBJ6fm4yz/api/docs">
-        
+
 
 <div class="appIcon brightColoredBackground" data-color="green">
     <div class="symbol">
-        
+
             <i class="icon icon-cogs"></i>
-        
+
     </div>
 </div>
 
@@ -192,17 +191,17 @@ ga('send', 'pageview');</script>
     </a>
 </li>
 
-            
-                
+
+
 <li class="app menuItemWithLink" menuitemvalue="appa4Jy2VNe3Qx3Kt">
     <a href="/appa4Jy2VNe3Qx3Kt/api/docs">
-        
+
 
 <div class="appIcon brightColoredBackground" data-color="gray">
     <div class="symbol">
-        
+
             <i class="icon icon-bolt"></i>
-        
+
     </div>
 </div>
 
@@ -210,17 +209,17 @@ ga('send', 'pageview');</script>
     </a>
 </li>
 
-            
-                
+
+
 <li class="app menuItemWithLink" menuitemvalue="appMOLiWa2Ah9xVuV">
     <a href="/appMOLiWa2Ah9xVuV/api/docs">
-        
+
 
 <div class="appIcon brightColoredBackground" data-color="gray">
     <div class="symbol">
-        
+
             <i class="icon icon-bolt"></i>
-        
+
     </div>
 </div>
 
@@ -228,17 +227,17 @@ ga('send', 'pageview');</script>
     </a>
 </li>
 
-            
-                
+
+
 <li class="app menuItemWithLink" menuitemvalue="appHG36dkwlQtbDPH">
     <a href="/appHG36dkwlQtbDPH/api/docs">
-        
+
 
 <div class="appIcon brightColoredBackground" data-color="orange">
     <div class="symbol">
-        
+
             <i class="icon icon-medkit"></i>
-        
+
     </div>
 </div>
 
@@ -246,25 +245,43 @@ ga('send', 'pageview');</script>
     </a>
 </li>
 
-            
-        
-    
-        
-        
+
+
+<li class="app menuItemWithLink" menuitemvalue="appj5X3Nz3jILP9kb">
+    <a href="/appj5X3Nz3jILP9kb/api/docs">
+
+
+<div class="appIcon brightColoredBackground" data-color="gray">
+    <div class="symbol">
+
+            <i class="icon icon-bolt"></i>
+
+    </div>
+</div>
+
+        <span class="name">{{ 'appj5X3Nz3jILP9kb' | appPickerApplicationIdToName }}</span>
+    </a>
+</li>
+
+
+
+
+
+
             <div class="workspace ui-state-disabled">
                 {{ 'wspNsZseMjpH8ajx6' | appPickerWorkspaceIdToName }}
             </div>
-            
-                
+
+
 <li class="app menuItemWithLink" menuitemvalue="appXbTQrCMZ5IZU9m">
     <a href="/appXbTQrCMZ5IZU9m/api/docs">
-        
+
 
 <div class="appIcon brightColoredBackground" data-color="cyan">
     <div class="symbol">
-        
+
             <i class="icon icon-beaker"></i>
-        
+
     </div>
 </div>
 
@@ -272,17 +289,17 @@ ga('send', 'pageview');</script>
     </a>
 </li>
 
-            
-                
+
+
 <li class="app menuItemWithLink" menuitemvalue="appeJkyZHPiut4ZJi">
     <a href="/appeJkyZHPiut4ZJi/api/docs">
-        
+
 
 <div class="appIcon brightColoredBackground" data-color="orange">
     <div class="symbol">
-        
+
             <i class="icon icon-rocket"></i>
-        
+
     </div>
 </div>
 
@@ -290,17 +307,17 @@ ga('send', 'pageview');</script>
     </a>
 </li>
 
-            
-                
+
+
 <li class="app menuItemWithLink" menuitemvalue="appcHFVP5xIcBhCk1">
     <a href="/appcHFVP5xIcBhCk1/api/docs">
-        
+
 
 <div class="appIcon brightColoredBackground" data-color="purple">
     <div class="symbol">
-        
+
             <i class="icon icon-coffee"></i>
-        
+
     </div>
 </div>
 
@@ -308,17 +325,17 @@ ga('send', 'pageview');</script>
     </a>
 </li>
 
-            
-                
+
+
 <li class="app menuItemWithLink" menuitemvalue="app35UxEVbcwUWUwd">
     <a href="/app35UxEVbcwUWUwd/api/docs">
-        
+
 
 <div class="appIcon brightColoredBackground" data-color="orange">
     <div class="symbol">
-        
+
             <i class="icon icon-money"></i>
-        
+
     </div>
 </div>
 
@@ -326,17 +343,17 @@ ga('send', 'pageview');</script>
     </a>
 </li>
 
-            
-                
+
+
 <li class="app menuItemWithLink" menuitemvalue="appRdLZ915gjhK1Bx">
     <a href="/appRdLZ915gjhK1Bx/api/docs">
-        
+
 
 <div class="appIcon brightColoredBackground" data-color="teal">
     <div class="symbol">
-        
+
             <i class="icon icon-calendar"></i>
-        
+
     </div>
 </div>
 
@@ -344,17 +361,17 @@ ga('send', 'pageview');</script>
     </a>
 </li>
 
-            
-                
+
+
 <li class="app menuItemWithLink" menuitemvalue="applYQunwITFuaAtF">
     <a href="/applYQunwITFuaAtF/api/docs">
-        
+
 
 <div class="appIcon brightColoredBackground" data-color="blue">
     <div class="symbol">
-        
+
             <i class="icon icon-briefcase"></i>
-        
+
     </div>
 </div>
 
@@ -362,9 +379,27 @@ ga('send', 'pageview');</script>
     </a>
 </li>
 
-            
-        
-    
+
+
+<li class="app menuItemWithLink" menuitemvalue="appdEZLWBaSkQO86T">
+    <a href="/appdEZLWBaSkQO86T/api/docs">
+
+
+<div class="appIcon brightColoredBackground" data-color="cyan">
+    <div class="symbol">
+
+            De
+
+    </div>
+</div>
+
+        <span class="name">{{ 'appdEZLWBaSkQO86T' | appPickerApplicationIdToName }}</span>
+    </a>
+</li>
+
+
+
+
 </ul>
 
 
@@ -653,6 +688,15 @@ var base = Airtable.base('{{application.id}}');
                             <div class="description">
                                 <div class="valueType">number</div>
                                 Percentage value showing {{column.typeOptions.precision}} decimal {{column.typeOptions.precision === 1 ? "digit" : "digits"}}. <numberdescription></numberdescription>
+                            </div>
+                        </span>
+                        <span ng-switch-when="percentV2">
+                            <div class="type">
+                                Percent
+                            </div>
+                            <div class="description">
+                                <div class="valueType">number</div>
+                                Decimal number representing a percentage value. For example, the underlying cell value for 12.3% is 0.123. <numberdescription></numberdescription>
                             </div>
                         </span>
                     </ng-switch>
@@ -953,6 +997,55 @@ var base = Airtable.base('{{application.id}}');
                             Learn more about using Markdown in long text's rich text formatting API.
                         </a>
                     </div>
+                </div>
+
+                <div ng-switch-when="computation">
+                    <ng-switch on="column.typeOptions.computationType">
+                        <div ng-switch-when="createdBy">
+                            <div class="type">
+                                Created by
+                            </div>
+                            <div class="description">
+                                <div class="valueType">collaborator object</div>
+                                Object providing details about the collaborator in this field.
+                                <br /><br />
+
+                                <div class="propName">id</div>
+                                <div class="propType">string</div>
+                                <div class="propDescription">unique user id</div>
+
+                                <div class="propName">email</div>
+                                <div class="propType">string</div>
+                                <div class="propDescription">user's email address</div>
+
+                                <div class="propName">name</div>
+                                <div class="propType">string</div>
+                                <div class="propDescription">user's display name (optional, may be empty if the user hasn't created an account)</div>
+                            </div>
+                        </div>
+                        <div ng-switch-when="lastModifiedBy">
+                            <div class="type">
+                                Last modified by
+                            </div>
+                            <div class="description">
+                                <div class="valueType">collaborator object</div>
+                                Object providing details about the collaborator in this field.
+                                <br /><br />
+
+                                <div class="propName">id</div>
+                                <div class="propType">string</div>
+                                <div class="propDescription">unique user id</div>
+
+                                <div class="propName">email</div>
+                                <div class="propType">string</div>
+                                <div class="propDescription">user's email address</div>
+
+                                <div class="propName">name</div>
+                                <div class="propType">string</div>
+                                <div class="propDescription">user's display name (optional, may be empty if the user hasn't created an account)</div>
+                            </div>
+                        </div>
+                    </ng-switch>
                 </div>
             </ng-switch>
         </div>
@@ -1286,7 +1379,38 @@ var base = Airtable.base('{{application.id}}');
                         </p>
                     </div>
                 </div>
-
+                <div ng-switch-when="computation">
+                    <div ng-switch on="column.typeOptions.computationType">
+                        <div ng-switch-when="createdBy">
+                            <div ng-if="hasSampleDataForColumn()">
+                                <h4>Example values</h4>
+                                <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:2">
+                                    <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                                </p>
+                            </div>
+                            <div ng-if="!hasSampleDataForColumn()">
+                                <h4>Example values</h4>
+                                <p>
+                                    To see example values, try adding some data to <tablename></tablename>.
+                                </p>
+                            </div>
+                        </div>
+                        <div ng-switch-when="lastModifiedBy">
+                            <div ng-if="hasSampleDataForColumn()">
+                                <h4>Example values</h4>
+                                <p ng-repeat="row in table.sampleRows | hasValueFor:column | limitTo:2">
+                                    <span hljs compile="false" language="json" source="row | exampleValueFor : column : table | prettyJson"></span>
+                                </p>
+                            </div>
+                            <div ng-if="!hasSampleDataForColumn()">
+                                <h4>Example values</h4>
+                                <p>
+                                    To see example values, try adding some data to <tablename></tablename>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 </div>
