@@ -1,6 +1,6 @@
 import * as nock from 'nock'
 import * as mock from './mock'
-import { AirtableMetaClient } from '../src/metadataClient'
+import { AirtableMetaClient, ColumnType } from '../src/metadataClient'
 
 const csrf = 'testcsrftoken'
 const baseId = 'appdEZLWBaSkQO86T'
@@ -97,20 +97,32 @@ describe('metadata client', () => {
             {
               id: 'fld4OfvUakyJBVmqT',
               name: 'Single line text - Primary Field',
-              type: 'text',
+              type: ColumnType.Text,
               typeOptions: null
             },
             {
               id: 'flde9EyTSyQ0eKoQC',
               name: 'URL',
-              type: 'text',
+              type: ColumnType.Text,
               typeOptions: { validatorName: 'url' }
             },
             {
               id: 'fldf3dzyeA6jC5kQe',
               name: 'Long text',
-              type: 'multilineText',
+              type: ColumnType.MultilineText,
               typeOptions: null
+            },
+            {
+              id: 'fldWXnJOgPf4Gpuer',
+              name: 'Multiple select',
+              type: ColumnType.MultiSelect,
+              typeOptions: expect.objectContaining({
+                choiceOrder: [
+                  'selDLCz5Ht5fejIFO',
+                  'selwnG07e37B0AzXV',
+                  'selouFMBv2Mh9Uyha'
+                ]
+              })
             }
           ])
         })
