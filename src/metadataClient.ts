@@ -3,6 +3,8 @@ import { CookieJar } from 'tough-cookie'
 import * as DomParser from 'dom-parser'
 import { ClientOptions, Base } from './interfaces'
 
+export * from './interfaces'
+
 export class AirtableMetaClient {
   private readonly baseClient: Got
 

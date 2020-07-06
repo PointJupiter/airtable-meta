@@ -33,7 +33,7 @@ export enum ColumnType {
   MultipleAttachment = 'multipleAttachment',
   Checkbox = 'checkbox',
   Select = 'select',
-  MultipleSelect = 'multipleSelect',
+  MultiSelect = 'multiSelect',
   Collaborator = 'collaborator',
   MultiCollaborator = 'multiCollaborator',
   Date = 'date',
@@ -92,7 +92,7 @@ export type CheckboxColumn = BaseColumn & {
 }
 
 export type SelectColumn = BaseColumn & {
-  type: ColumnType.Select | ColumnType.MultipleSelect
+  type: ColumnType.Select | ColumnType.MultiSelect
   typeOptions: {
     choices: {
       [key: string]: {
