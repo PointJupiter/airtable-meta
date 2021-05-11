@@ -41,6 +41,7 @@
          "delimiter": "comma",
          "requireLast": false
        }
-    }]
+    }],
+    "no-use-before-define": "off"
   }
 }
